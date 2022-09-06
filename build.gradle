@@ -1,0 +1,27 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.3'
+	id 'io.spring.dependency-management' version '1.0.13.RELEASE'
+	id 'java'
+}
+
+group = 'cl.tbdlab'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/org.sql2o/sql2o
+	implementation group: 'org.sql2o', name: 'sql2o', version: '1.5.4'
+	// https://mvnrepository.com/artifact/postgresql/postgresql
+	implementation group: 'postgresql', name: 'postgresql', version: '9.1-901.jdbc4'
+
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
