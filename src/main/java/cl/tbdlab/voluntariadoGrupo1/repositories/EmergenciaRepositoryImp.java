@@ -13,15 +13,15 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
     @Autowired
     private Sql2o sql2o;
     @Override
-    public int insertEmergencia(Emergencia emergencia){
+    public int insertEmergencia(Emergencia em){
         try(Connection conn = sql2o.open()){
-            conn.createQuery("INSERT INTO emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in)" +
-                    "values (:nombre, :estado_eme, :detalles, :voluntarios_reg, :id_in);")
-                    .addParameter("nombre", emergencia.getNombre())
-                    .addParameter("estado_eme", emergencia.getEstado_eme())
-                    .addParameter("detalles", emergencia.getDetalles())
-                    .addParameter("voluntarios_reg", emergencia.getVoluntarios_reg())
-                    .addParameter("id_in", emergencia.getId_in())
+            conn.createQuery("INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in)" +
+                    "VALUES (:nombre, :estado_eme, :detalles, :voluntarios_reg, :id_in);")
+                    .addParameter("nombre", em.getNombre())
+                    .addParameter("estado_eme", em.getEstado_eme())
+                    .addParameter("detalles", em.getDetalles())
+                    .addParameter("voluntarios_reg", em.getVoluntarios_reg())
+                    .addParameter("id_in", em.getId_in())
                     .executeUpdate();
             return 1;
         }
@@ -43,7 +43,7 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public Emergencia readEmergencia(int id) {
+    public Emergencia readEmergencia(Long id) {
         try(Connection conn = sql2o.open()){
             Emergencia emergencia = conn.createQuery("SELECT * FROM db_emerg.emergencia as e WHERE e.id = :id;")
                     .addParameter("id", id)
@@ -74,7 +74,7 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public int deleteEmergencia(int id){
+    public int deleteEmergencia(Long id){
         try(Connection conn = sql2o.open()){
             conn.createQuery("DELETE FROM db_emerg.emergencia as e WHERE e.id = :id;")
                     .addParameter("id", id)

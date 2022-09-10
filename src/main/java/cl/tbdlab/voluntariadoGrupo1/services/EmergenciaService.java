@@ -2,6 +2,8 @@ package cl.tbdlab.voluntariadoGrupo1.services;
 
 import cl.tbdlab.voluntariadoGrupo1.models.Emergencia;
 import cl.tbdlab.voluntariadoGrupo1.repositories.EmergenciaRepository;
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.apache.catalina.connector.Request;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,7 +17,7 @@ public class EmergenciaService {
     }
 
     @GetMapping("/emergencias/{id}")
-    public Emergencia getEmergencia(@PathVariable("id") int id){
+    public Emergencia getEmergencia(@PathVariable("id") Long id){
         return emergenciaRepository.readEmergencia(id);
     }
 
@@ -25,14 +27,13 @@ public class EmergenciaService {
     }
 
     @PostMapping("/emergencias")
-    @ResponseBody
-    public int createEmergencia(@RequestBody Emergencia emergencia){
-        return emergenciaRepository.insertEmergencia(emergencia);
+    public int createEmergencia(@RequestBody Emergencia e){
+        return emergenciaRepository.insertEmergencia(e);
     }
 
     @PutMapping("/emergencias/{id}")
-    public int updateEmergencia(@PathVariable("id") int id, @RequestBody Emergencia emergencia){
-        emergencia.setId(String.valueOf(id));
+    public int updateEmergencia(@PathVariable("id") Long id, @RequestBody Emergencia emergencia){
+        emergencia.setId(id);
         return emergenciaRepository.updateEmergencia(emergencia);
     }
     @DeleteMapping("/emergencias")
@@ -40,7 +41,7 @@ public class EmergenciaService {
         return emergenciaRepository.deleteEmergencia();
     }
     @DeleteMapping("/emergencias/{id}")
-    public int deleteEmergency(@PathVariable("id") int id){
+    public int deleteEmergency(@PathVariable("id") Long id){
         return emergenciaRepository.deleteEmergencia(id);
     }
 

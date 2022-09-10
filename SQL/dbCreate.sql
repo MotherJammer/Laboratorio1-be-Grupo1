@@ -26,8 +26,8 @@ create table db_emerg.vol_habilidad(
 	id serial primary key unique not null,
 	id_vo serial not null,
 	id_ha serial not null,
-	foreign key(id_vo) references db_emerg.voluntario(id),
-	foreign key(id_ha) references db_emerg.habilidad(id)
+	foreign key(id_vo) references db_emerg.voluntario(id) on delete cascade,
+	foreign key(id_ha) references db_emerg.habilidad(id) on delete cascade
 );
 
 create table db_emerg.emergencia(
@@ -37,7 +37,7 @@ create table db_emerg.emergencia(
 	detalles varchar(50) not null,
 	voluntarios_reg integer not null,
 	id_in serial not null,
-	foreign key (id_in) references db_emerg.institucion(id)
+	foreign key (id_in) references db_emerg.institucion(id) on delete cascade
 );
 
 create table db_emerg.tarea(
@@ -45,29 +45,29 @@ create table db_emerg.tarea(
 	nombre varchar(20) not null,
 	id_es serial not null,
 	id_em serial not null,
-	foreign key(id_es) references db_emerg.estado_tarea(id),
-	foreign key(id_em) references db_emerg.emergencia(id)
+	foreign key(id_es) references db_emerg.estado_tarea(id) on delete cascade,
+	foreign key(id_em) references db_emerg.emergencia(id) on delete cascade
 );
 create table db_emerg.ranking(
 	id serial primary key unique not null,
 	id_vo serial not null,
 	id_ta serial not null,
-	foreign key(id_vo) references db_emerg.voluntario(id),
-	foreign key(id_ta) references db_emerg.tarea(id)
+	foreign key(id_vo) references db_emerg.voluntario(id) on delete cascade,
+	foreign key(id_ta) references db_emerg.tarea(id) on delete cascade
 );
 
 create table db_emerg.eme_habilidad(
 	id serial primary key unique not null,
 	id_em serial not null,
 	id_ha serial not null,
-	foreign key(id_ha) references db_emerg.habilidad(id),
-	foreign key(id_em) references db_emerg.emergencia(id)
+	foreign key(id_ha) references db_emerg.habilidad(id) on delete cascade,
+	foreign key(id_em) references db_emerg.emergencia(id) on delete cascade
 );
 
 create table db_emerg.tarea_habilidad(
 	id serial primary key unique not null,
 	id_ta serial not null,
 	id_ha serial not null,
-	foreign key(id_ta) references db_emerg.tarea(id),
-	foreign key(id_ha) references db_emerg.habilidad(id)
+	foreign key(id_ta) references db_emerg.tarea(id) on delete cascade,
+	foreign key(id_ha) references db_emerg.habilidad(id) on delete cascade
 );
