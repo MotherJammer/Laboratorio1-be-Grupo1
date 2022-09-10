@@ -56,15 +56,16 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public int updateEmergencia(Emergencia emergencia){
+    public int updateEmergencia(Emergencia emergencia, long id){
         try(Connection conn = sql2o.open()){
-            conn.createQuery("UPDATE db_emerg.emergencia as e SET e.nombre = :nombre, e.estado_eme = :estado," +
-                    "e.detalles = :detalles, voluntarios_reg = :voluntarios_reg, id_in = :id_in;")
+            conn.createQuery("UPDATE db_emerg.emergencia as e SET nombre = :nombre, estado_eme = :estado," +
+                    "detalles = :detalles, voluntarios_reg = :voluntarios_reg, id_in = :id_in WHERE e.id = :id;")
                     .addParameter("nombre", emergencia.getNombre())
                     .addParameter("estado",emergencia.getEstado_eme())
                     .addParameter("detalles", emergencia.getDetalles())
                     .addParameter("voluntarios_reg",emergencia.getVoluntarios_reg())
                     .addParameter("id_in", emergencia.getId_in())
+                    .addParameter("id", id)
                     .executeUpdate();
             return 1;
         }

@@ -34,7 +34,7 @@ public class EmergenciaService {
     @PutMapping("/emergencias/{id}")
     public int updateEmergencia(@PathVariable("id") Long id, @RequestBody Emergencia emergencia){
         emergencia.setId(id);
-        return emergenciaRepository.updateEmergencia(emergencia);
+        return emergenciaRepository.updateEmergencia(emergencia, id);
     }
     @DeleteMapping("/emergencias")
     public int deleteEmergency(){
