@@ -44,7 +44,7 @@ VALUES
 INSERT INTO db_emerg.estado_tarea (estado_actual)
 VALUES
   ('Sin asignar'),
-  ('Proceso'),
+  ('En proceso'),
   ('Finalizada');
   
 --Tabla institucion
@@ -64,16 +64,16 @@ VALUES
 --Tabla emergencia
 INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in)
 VALUES
-  ('Avalancha', 'contratacion', 'Lorem ipsum dolor sit amet', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Fowler')),
-  ('Ola de calor', 'proceso', 'Aenean massa. Cum sociis natoque', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Carter')),
-  ('Granizo', 'proceso', 'Donec quam felis, ultricies nec, pellentesque eu', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Rose')),
-  ('Derrumbe', 'proceso', 'Nulla consequat massa quis enim', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Moore')),
-  ('Huracan', 'proceso', 'Donec pede justo, fringilla vel, aliquet nec', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Reeds')),
-  ('Incendio', 'contratacion', 'Nullam dictum felis eu pede mollis pretium', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Jammer')),
-  ('Terremoto', 'finalizada', 'Vivamus elementum semper nisi. Aenean vulputate', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Eidres')),
-  ('Tsunami', 'finalizada', 'Aenean leo ligula, porttitor eu, consequat vitae', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Leams')),
-  ('Erupcion', 'contratacion', 'Aliquam lorem ante, dapibus in, viverra quis', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Pleto')),
-  ('Tormenta', 'contratacion', 'Curabitur ullamcorper ultricies nisi.', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Yiyi'));
+  ('Avalancha', 'Reclutando', 'Lorem ipsum dolor sit amet', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Fowler')),
+  ('Ola de calor', 'En proceso', 'Aenean massa. Cum sociis natoque', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Carter')),
+  ('Granizo', 'En proceso', 'Donec quam felis, ultricies nec, pellentesque eu', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Rose')),
+  ('Derrumbe', 'En proceso', 'Nulla consequat massa quis enim', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Moore')),
+  ('Huracan', 'En proceso', 'Donec pede justo, fringilla vel, aliquet nec', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Reeds')),
+  ('Incendio', 'Reclutando', 'Nullam dictum felis eu pede mollis pretium', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Jammer')),
+  ('Terremoto', 'Finalizada', 'Vivamus elementum semper nisi. Aenean vulputate', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Eidres')),
+  ('Tsunami', 'Finalizada', 'Aenean leo ligula, porttitor eu, consequat vitae', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Leams')),
+  ('Erupcion', 'Reclutando', 'Aliquam lorem ante, dapibus in, viverra quis', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Pleto')),
+  ('Tormenta', 'Reclutando', 'Curabitur ullamcorper ultricies nisi.', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Yiyi'));
   
 --Tabla tarea
 INSERT INTO db_emerg.tarea (nombre, id_es, id_em)
