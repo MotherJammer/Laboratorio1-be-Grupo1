@@ -79,15 +79,15 @@ VALUES
 INSERT INTO db_emerg.tarea (nombre, id_es, id_em)
 VALUES
   ('Inspeccion de area', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Sin asignar'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Avalancha')),
-  ('Extincion incendio', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Ola de calor')),
+  ('Extincion incendio', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'En proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Ola de calor')),
   ('Transporte', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Finalizada'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Avalancha')),
   ('Direccion', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Finalizada'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Tormenta')),
   ('Limpieza', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Sin asignar'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Derrumbe')),
-  ('Rescate', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Terremoto')),
-  ('Resumen danios', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Tsunami')),
+  ('Rescate', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'En proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Terremoto')),
+  ('Resumen danios', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'En proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Tsunami')),
   ('Comunicacion', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Finalizada'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Huracan')),
   ('Retiro de escombros', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Sin asignar'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Terremoto')),
-  ('Distribucion', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Granizo'));
+  ('Distribucion', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'En proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Granizo'));
   
 --Tabla ranking
 INSERT INTO db_emerg.ranking (id_vo, id_ta)
