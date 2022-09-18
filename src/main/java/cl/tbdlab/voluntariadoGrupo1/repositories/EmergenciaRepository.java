@@ -10,4 +10,6 @@ public interface EmergenciaRepository {
     public int updateEmergencia(Emergencia emergencia, long id);
     public int deleteEmergencia(Long id);
     public int deleteEmergencia();
+
+    public int lastRecord();
 }

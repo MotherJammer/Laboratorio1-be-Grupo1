@@ -2,8 +2,10 @@ package cl.tbdlab.voluntariadoGrupo1.services;
 
 import cl.tbdlab.voluntariadoGrupo1.models.HabilidadModel;
 import cl.tbdlab.voluntariadoGrupo1.repositories.HabilidadRepository;
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin
@@ -44,6 +46,11 @@ public class HabilidadService {
     @DeleteMapping("/habilidades")
     public int deleteAllHabilidad(){
         return habilidadRepository.deleteAllHabilidades();
+    }
+
+    @PostMapping("/testHabilidades")
+    public void idk (@RequestParam List<Integer> idHabilidades){
+        habilidadRepository.temporalEme_Habilidad(idHabilidades);
     }
 
 }

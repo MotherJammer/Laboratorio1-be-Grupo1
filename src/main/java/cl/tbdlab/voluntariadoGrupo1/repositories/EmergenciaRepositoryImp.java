@@ -99,4 +99,16 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
             return -1;
         }
     }
+
+    //me obtiene el ultimo id de la tabla emergencia
+    public int lastRecord (){
+        try (Connection conn = sql2o.open()){
+            return conn.createQuery("SELECT  MAX(id) FROM db_emerg.emergencia")
+                    .executeScalar(int.class);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return 0;
+        }
+    }
 }
