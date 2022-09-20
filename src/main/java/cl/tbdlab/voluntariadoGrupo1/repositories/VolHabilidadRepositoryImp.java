@@ -14,7 +14,7 @@ public class VolHabilidadRepositoryImp implements VolHabilidadRepository{
     private Sql2o sql2o;
     public int createVolHabilidad(VolHabilidadModel vol_ha){
         try (Connection connection = sql2o.open()){
-            connection.createQuery("INSERT INTO db_emerg.vol_ha (id_vo, id_ha) VALUES (:id_vo, :id_ha);")
+            connection.createQuery("INSERT INTO db_emerg.vol_habilidad (id_vo, id_ha) VALUES (:id_vo, :id_ha);")
                     .addParameter("id_vo", vol_ha.getId_vo())
                     .addParameter("id_ha", vol_ha.getId_ha())
                     .executeUpdate();
@@ -28,7 +28,7 @@ public class VolHabilidadRepositoryImp implements VolHabilidadRepository{
     @Override
     public VolHabilidadModel readVolHabilidad(Long id){
         try (Connection connection = sql2o.open()){
-            VolHabilidadModel vol_ha = connection.createQuery("SELECT * FROM db_emerg.vol_ha AS v WHERE v.id = :id;")
+            VolHabilidadModel vol_ha = connection.createQuery("SELECT * FROM db_emerg.vol_habilidad AS v WHERE v.id = :id;")
                     .addParameter("id", id)
                     .executeAndFetchFirst(VolHabilidadModel.class);
             return vol_ha;

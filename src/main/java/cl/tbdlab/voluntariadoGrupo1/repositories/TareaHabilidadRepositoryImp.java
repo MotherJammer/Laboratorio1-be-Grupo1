@@ -14,7 +14,7 @@ public class TareaHabilidadRepositoryImp implements  TareaHabilidadRepository {
     private Sql2o sql2o;
     public int createTareaHabilidad(TareaHabilidadModel ta_ha){
         try (Connection connection = sql2o.open()){
-            connection.createQuery("INSERT INTO db_emerg.vol_ha (id_ta, id_ha) VALUES (:id_ta, :id_ha);")
+            connection.createQuery("INSERT INTO db_emerg.tarea_habilidad (id_ta, id_ha) VALUES (:id_ta, :id_ha);")
                     .addParameter("id_ta", ta_ha.getId_ta())
                     .addParameter("id_ha", ta_ha.getId_ha())
                     .executeUpdate();
