@@ -1,7 +1,8 @@
 package cl.tbdlab.voluntariadoGrupo1.repositories;
 
 import cl.tbdlab.voluntariadoGrupo1.models.EmeHabilidadModel;
-import cl.tbdlab.voluntariadoGrupo1.models.InstitucionModel;
+import cl.tbdlab.voluntariadoGrupo1.models.Emergencia;
+import cl.tbdlab.voluntariadoGrupo1.models.HabilidadModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
@@ -15,19 +16,35 @@ public class EmeHabilidadRepositoryImp implements EmeHabilidadRepository{
     @Autowired
     Sql2o sql2o;
 
+    @Autowired
+    EmergenciaRepository emergenciaRepository;
+
+    @Autowired
+    HabilidadRepository habilidadRepository;
+
     @Override
-    public int createEmeHabilidad(EmeHabilidadModel emeHabilidad){
+    public int createEmeHabilidadInDB(EmeHabilidadModel emeHabilidad){
         try (Connection connection = sql2o.open()){
             connection.createQuery("INSERT INTO db_emerg.eme_habilidad (id_em, id_ha)" +
                             "VALUES (:id_em, :id_ha);")
                     .addParameter("id_em", emeHabilidad.getEmergencia().getId())
-                    .addParameter("coordinador", emeHabilidad.getHabilidadModel().getId())
+                    .addParameter("id_ha", emeHabilidad.getHabilidadModel().getId())
                     .executeUpdate();
             return (1);
         }
         catch (Exception err){
             return (-1);
         }
+    }
+    public int createEmeHabilidad(List<Long> idHabilidades){
+        Long lastRecord = emergenciaRepository.lastRecord()+1L; //le sumo uno ya que me obtiene el ultimo antes del nuevo INSERTE emergencia
+        Emergencia emergency = emergenciaRepository.readEmergencia(lastRecord);
+        for (int i=0;i<idHabilidades.size();i++){
+            HabilidadModel habilidad = habilidadRepository.readHabilidad(idHabilidades.get(i));
+            EmeHabilidadModel emeHabilidad = new EmeHabilidadModel(emergency,habilidad);
+            createEmeHabilidadInDB(emeHabilidad);
+        }
+        return 1;
     }
 
     @Override

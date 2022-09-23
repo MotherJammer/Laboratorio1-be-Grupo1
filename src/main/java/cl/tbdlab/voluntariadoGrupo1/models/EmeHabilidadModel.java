@@ -18,8 +18,7 @@ public class EmeHabilidadModel {
     @JoinColumn(name = "Habilidad")
     HabilidadModel habilidadModel;
 
-    public EmeHabilidadModel(Long id, Emergencia emergencia, HabilidadModel habilidadModel) {
-        this.id = id;
+    public EmeHabilidadModel( Emergencia emergencia, HabilidadModel habilidadModel) {
         this.emergencia = emergencia;
         this.habilidadModel = habilidadModel;
     }

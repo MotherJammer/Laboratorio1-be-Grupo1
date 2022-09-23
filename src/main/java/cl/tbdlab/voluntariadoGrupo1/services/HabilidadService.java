@@ -48,9 +48,6 @@ public class HabilidadService {
         return habilidadRepository.deleteAllHabilidades();
     }
 
-    @PostMapping("/testHabilidades")
-    public void idk (@RequestParam List<Integer> idHabilidades){
-        habilidadRepository.temporalEme_Habilidad(idHabilidades);
-    }
+
 
 }

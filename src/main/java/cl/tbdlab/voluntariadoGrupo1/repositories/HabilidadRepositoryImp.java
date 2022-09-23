@@ -96,7 +96,7 @@ public class HabilidadRepositoryImp implements HabilidadRepository{
 
     @Override
     public int temporalEme_Habilidad(List<Integer> idHabilidades){
-        int lastRecord = emergenciaRepositoryImp.lastRecord() + 1; //le sumo uno ya que me obtiene el ultimo antes del nuevo INSERTE emergencia
+        Long lastRecord = emergenciaRepositoryImp.lastRecord() + 1; //le sumo uno ya que me obtiene el ultimo antes del nuevo INSERTE emergencia
         //intente que por cada habilidad seleccionada se itere y se agregue a la db, no pasa de la query
         for (int i=0;i<idHabilidades.size();i++){
             try(Connection conn = sql2o.open().setRollbackOnException(false)){

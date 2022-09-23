@@ -18,8 +18,8 @@ public class EmeHabilidadService {
     }
 
     @PostMapping("/eme_habilidad")
-    public int createEmeHabilidad(@RequestBody EmeHabilidadModel emeHabilidad){
-        return emeHabilidadRepository.createEmeHabilidad(emeHabilidad);
+    public int createEmeHabilidad(@RequestParam List<Long> idHabilidades){
+        return emeHabilidadRepository.createEmeHabilidad(idHabilidades);
     }
 
     @GetMapping("/eme_habilidad/{id}")
@@ -47,4 +47,5 @@ public class EmeHabilidadService {
     public int deleteAllInstituciones(){
         return emeHabilidadRepository.deleteAllEmeHabilidad();
     }
+
 }

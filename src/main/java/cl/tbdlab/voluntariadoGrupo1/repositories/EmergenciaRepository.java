@@ -11,5 +11,5 @@ public interface EmergenciaRepository {
     public int deleteEmergencia(Long id);
     public int deleteEmergencia();
 
-    public int lastRecord();
+    public Long lastRecord();
 }
