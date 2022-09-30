@@ -18,7 +18,8 @@ public class EmeHabilidadService {
     }
 
     @PostMapping("/eme_habilidad")
-    public int createEmeHabilidad(@RequestParam List<Long> idHabilidades){
+    public int createEmeHabilidad(@RequestParam List<Long> idHabilidades) throws InterruptedException {
+        Thread.sleep(5000);
         return emeHabilidadRepository.createEmeHabilidad(idHabilidades);
     }
 

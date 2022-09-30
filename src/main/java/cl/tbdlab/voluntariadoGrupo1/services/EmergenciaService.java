@@ -2,6 +2,7 @@ package cl.tbdlab.voluntariadoGrupo1.services;
 
 import cl.tbdlab.voluntariadoGrupo1.models.Emergencia;
 import cl.tbdlab.voluntariadoGrupo1.repositories.EmergenciaRepository;
+import cl.tbdlab.voluntariadoGrupo1.repositories.InstitucionRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,8 +11,10 @@ import java.util.List;
 @RestController
 public class EmergenciaService {
     private final EmergenciaRepository emergenciaRepository;
-    EmergenciaService(EmergenciaRepository emergenciaRepository){
+    private final InstitucionRepository institucionRepository;
+    EmergenciaService(EmergenciaRepository emergenciaRepository, InstitucionRepository institucionRepository){
         this.emergenciaRepository = emergenciaRepository;
+        this.institucionRepository = institucionRepository;
     }
 
     @GetMapping("/emergencias/{id}")
@@ -24,9 +27,10 @@ public class EmergenciaService {
         return emergenciaRepository.readEmergencia();
     }
 
+
     @PostMapping("/emergencias")
-    public int createEmergencia(@RequestBody Emergencia e){
-        return emergenciaRepository.insertEmergencia(e);
+    public  int testCreateEmergencia (String nombre, String estado_eme, String detalles, int voluntarios_reg, String nombre_in){
+        return emergenciaRepository.insertEmergencia(nombre,estado_eme,detalles,voluntarios_reg,nombre_in);
     }
 
     @PutMapping("/emergencias/{id}")

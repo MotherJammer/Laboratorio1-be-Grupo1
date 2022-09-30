@@ -12,5 +12,6 @@ public interface InstitucionRepository {
     public int deleteInstitucion(Long id);
     public List<InstitucionModel> readAllInstituciones();
     public int deleteAllInstituciones();
+    public  Long readInstitucionByName(String name);
 
 }

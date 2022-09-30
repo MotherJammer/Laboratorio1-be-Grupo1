@@ -15,5 +15,4 @@ public interface HabilidadRepository {
     public List<HabilidadModel> readAllHabilidades();
     public int deleteAllHabilidades();
 
-    public int  temporalEme_Habilidad(List<Integer> idHabilidades);
 }

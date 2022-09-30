@@ -5,25 +5,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
-
 import java.util.List;
 
 @Repository
 public class EmergenciaRepositoryImp implements EmergenciaRepository {
     @Autowired
     private Sql2o sql2o;
+    @Autowired
+    InstitucionRepositoryImp institucionRepository;
     @Override
-    public int insertEmergencia(Emergencia em){
+    public int insertEmergencia(String nombre, String estado, String detalles, int volunt, String nombre_in){
+        Long id_in = institucionRepository.readInstitucionByName(nombre_in);
         try(Connection conn = sql2o.open()){
             conn.createQuery("INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in)" +
                     "VALUES (:nombre, :estado_eme, :detalles, :voluntarios_reg, :id_in);")
-                    .addParameter("nombre", em.getNombre())
-                    .addParameter("estado_eme", em.getEstado_eme())
-                    .addParameter("detalles", em.getDetalles())
-                    .addParameter("voluntarios_reg", em.getVoluntarios_reg())
-                    .addParameter("id_in", em.getId_in())
-                    .executeUpdate();
-            return 1;
+                    .addParameter("nombre", nombre)
+                    .addParameter("estado_eme", estado)
+                    .addParameter("detalles", detalles)
+                    .addParameter("voluntarios_reg", volunt)
+                    .addParameter("id_in", id_in)
+                    .executeUpdate()
+                    .close();
+            return lastRecord();
         }
         catch(Exception e){
             System.out.println(e.getMessage());
@@ -101,14 +104,14 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
     }
 
     //me obtiene el ultimo id de la tabla emergencia
-    public Long lastRecord (){
+    public int lastRecord (){
         try (Connection conn = sql2o.open()){
             return conn.createQuery("SELECT  MAX(id) FROM db_emerg.emergencia")
-                    .executeScalar(Long.class);
+                    .executeScalar(Integer.class);
         }
         catch (Exception e){
             System.out.println(e.getMessage());
-            return 0L;
+            return 0;
         }
     }
 }

@@ -41,6 +41,18 @@ public class InstitucionRepositoryImp implements InstitucionRepository {
         }
     }
 
+    public Long readInstitucionByName(String name){
+        try (Connection connection = sql2o.open()){
+            Long id_institucion = connection.createQuery("select id from db_emerg.institucion as i where i.nombre = :name")
+                    .addParameter("name", name)
+                    .executeAndFetchFirst(Long.class);
+            return id_institucion;
+        }
+        catch (Exception err){
+            return 0L;
+        }
+    }
+
     @Override
     public int updateInstitucion(InstitucionModel institucion, Long id){
         try (Connection connection = sql2o.open()){
