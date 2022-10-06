@@ -1,6 +1,6 @@
 package cl.tbdlab.voluntariadoGrupo1.repositories;
 
-import cl.tbdlab.voluntariadoGrupo1.models.Emergencia;
+import cl.tbdlab.voluntariadoGrupo1.models.EmergenciaModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
@@ -14,8 +14,7 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
     @Autowired
     InstitucionRepositoryImp institucionRepository;
     @Override
-    public int insertEmergencia(String nombre, String estado, String detalles, int volunt, String nombre_in){
-        Long id_in = institucionRepository.readInstitucionByName(nombre_in);
+    public int insertEmergencia(String nombre, String estado, String detalles, int volunt, Long id_in){
         try(Connection conn = sql2o.open()){
             conn.createQuery("INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in)" +
                     "VALUES (:nombre, :estado_eme, :detalles, :voluntarios_reg, :id_in);")
@@ -34,10 +33,10 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public List<Emergencia>readEmergencia(){
+    public List<EmergenciaModel>readEmergencia(){
         try(Connection conn = sql2o.open()){
-            List<Emergencia> emergencia = conn.createQuery("SELECT * FROM db_emerg.emergencia;")
-                    .executeAndFetch(Emergencia.class);
+            List<EmergenciaModel> emergencia = conn.createQuery("SELECT * FROM db_emerg.emergencia;")
+                    .executeAndFetch(EmergenciaModel.class);
             return emergencia;
         }
         catch(Exception e){
@@ -46,11 +45,11 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public Emergencia readEmergencia(Long id) {
+    public EmergenciaModel readEmergencia(Long id) {
         try(Connection conn = sql2o.open()){
-            Emergencia emergencia = conn.createQuery("SELECT * FROM db_emerg.emergencia as e WHERE e.id = :id;")
+            EmergenciaModel emergencia = conn.createQuery("SELECT * FROM db_emerg.emergencia as e WHERE e.id = :id;")
                     .addParameter("id", id)
-                    .executeAndFetchFirst(Emergencia.class);
+                    .executeAndFetchFirst(EmergenciaModel.class);
             return emergencia;
         }
         catch(Exception e){
@@ -59,7 +58,7 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public int updateEmergencia(Emergencia emergencia, long id){
+    public int updateEmergencia(EmergenciaModel emergencia, long id){
         try(Connection conn = sql2o.open()){
             conn.createQuery("UPDATE db_emerg.emergencia as e SET nombre = :nombre, estado_eme = :estado," +
                     "detalles = :detalles, voluntarios_reg = :voluntarios_reg, id_in = :id_in WHERE e.id = :id;")

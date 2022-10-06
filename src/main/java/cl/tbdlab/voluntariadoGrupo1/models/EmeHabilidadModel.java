@@ -12,13 +12,13 @@ public class EmeHabilidadModel {
 
     @ManyToOne
     @JoinColumn(name = "Emergencia")
-    Emergencia emergencia;
+    EmergenciaModel emergencia;
 
     @ManyToOne
     @JoinColumn(name = "Habilidad")
     HabilidadModel habilidadModel;
 
-    public EmeHabilidadModel( Emergencia emergencia, HabilidadModel habilidadModel) {
+    public EmeHabilidadModel(EmergenciaModel emergencia, HabilidadModel habilidadModel) {
         this.emergencia = emergencia;
         this.habilidadModel = habilidadModel;
     }
@@ -31,11 +31,11 @@ public class EmeHabilidadModel {
         this.id = id;
     }
 
-    public Emergencia getEmergencia() {
+    public EmergenciaModel getEmergencia() {
         return emergencia;
     }
 
-    public void setEmergencia(Emergencia emergencia) {
+    public void setEmergencia(EmergenciaModel emergencia) {
         this.emergencia = emergencia;
     }
 

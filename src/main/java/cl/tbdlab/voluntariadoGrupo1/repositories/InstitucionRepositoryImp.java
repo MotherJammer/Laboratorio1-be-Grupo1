@@ -40,15 +40,17 @@ public class InstitucionRepositoryImp implements InstitucionRepository {
             return null;
         }
     }
-
+    @Override
     public Long readInstitucionByName(String name){
         try (Connection connection = sql2o.open()){
-            Long id_institucion = connection.createQuery("select id from db_emerg.institucion as i where i.nombre = :name")
+            System.out.println(name);
+            Long id_institucion = connection.createQuery("SELECT id FROM db_emerg.institucion AS i WHERE i.nombre = :name;")
                     .addParameter("name", name)
                     .executeAndFetchFirst(Long.class);
             return id_institucion;
         }
         catch (Exception err){
+            System.out.println(err.getMessage());
             return 0L;
         }
     }

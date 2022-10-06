@@ -1,7 +1,7 @@
 package cl.tbdlab.voluntariadoGrupo1.repositories;
 
 import cl.tbdlab.voluntariadoGrupo1.models.EmeHabilidadModel;
-import cl.tbdlab.voluntariadoGrupo1.models.Emergencia;
+import cl.tbdlab.voluntariadoGrupo1.models.EmergenciaModel;
 import cl.tbdlab.voluntariadoGrupo1.models.HabilidadModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -38,7 +38,7 @@ public class EmeHabilidadRepositoryImp implements EmeHabilidadRepository{
     }
     public int createEmeHabilidad(List<Long> idHabilidades){
         int lastRecord = emergenciaRepository.lastRecord();
-        Emergencia emergency = emergenciaRepository.readEmergencia((long) lastRecord);
+        EmergenciaModel emergency = emergenciaRepository.readEmergencia((long) lastRecord);
         for (int i=0;i<idHabilidades.size();i++){
             HabilidadModel habilidad = habilidadRepository.readHabilidad(idHabilidades.get(i));
             EmeHabilidadModel emeHabilidad = new EmeHabilidadModel(emergency,habilidad);

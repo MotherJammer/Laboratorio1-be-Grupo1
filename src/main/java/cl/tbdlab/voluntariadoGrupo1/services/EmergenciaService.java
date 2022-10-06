@@ -1,6 +1,6 @@
 package cl.tbdlab.voluntariadoGrupo1.services;
 
-import cl.tbdlab.voluntariadoGrupo1.models.Emergencia;
+import cl.tbdlab.voluntariadoGrupo1.models.EmergenciaModel;
 import cl.tbdlab.voluntariadoGrupo1.repositories.EmergenciaRepository;
 import cl.tbdlab.voluntariadoGrupo1.repositories.InstitucionRepository;
 import org.springframework.web.bind.annotation.*;
@@ -18,23 +18,23 @@ public class EmergenciaService {
     }
 
     @GetMapping("/emergencias/{id}")
-    public Emergencia getEmergencia(@PathVariable("id") Long id){
+    public EmergenciaModel getEmergencia(@PathVariable("id") Long id){
         return emergenciaRepository.readEmergencia(id);
     }
 
     @GetMapping("/emergencias")
-    public List<Emergencia> getEmergencia(){
+    public List<EmergenciaModel> getEmergencia(){
         return emergenciaRepository.readEmergencia();
     }
 
 
     @PostMapping("/emergencias")
-    public  int testCreateEmergencia (String nombre, String estado_eme, String detalles, int voluntarios_reg, String nombre_in){
-        return emergenciaRepository.insertEmergencia(nombre,estado_eme,detalles,voluntarios_reg,nombre_in);
+    public  int testCreateEmergencia (String nombre, String estado_eme, String detalles, int voluntarios_reg, Long id_in){
+        return emergenciaRepository.insertEmergencia(nombre,estado_eme,detalles,voluntarios_reg, id_in);
     }
 
     @PutMapping("/emergencias/{id}")
-    public int updateEmergencia(@PathVariable("id") Long id, @RequestBody Emergencia emergencia){
+    public int updateEmergencia(@PathVariable("id") Long id, @RequestBody EmergenciaModel emergencia){
         emergencia.setId(id);
         return emergenciaRepository.updateEmergencia(emergencia, id);
     }

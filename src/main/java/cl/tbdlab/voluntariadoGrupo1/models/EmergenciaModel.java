@@ -1,13 +1,12 @@
 package cl.tbdlab.voluntariadoGrupo1.models;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 
 @Entity
-public class Emergencia {
+public class EmergenciaModel {
     @Getter @Setter @Id Long id;
     @Getter @Setter String nombre;
     @Getter @Setter String estado_eme;
