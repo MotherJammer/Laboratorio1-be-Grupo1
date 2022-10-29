@@ -1,16 +1,27 @@
 --Tabla voluntario
-INSERT INTO db_emerg.voluntario (nombre, disponibilidad)
+INSERT INTO db_emerg.voluntario (nombre, disponibilidad, geom)
 VALUES
-  ('Dorothy Parsons', TRUE),
-  ('Lily Bond', TRUE),
-  ('Alison Springer', TRUE),
-  ('Wendy Duncan', TRUE),
-  ('Vanessa Ellison',TRUE),
-  ('Amy Slater', TRUE),
-  ('Warren Newman', FALSE),
-  ('Penelope Walsh',TRUE),
-  ('Lisa Mackenzie', FALSE),
-  ('Rachel Paige',FALSE);
+  ('Dorothy Parsons', TRUE,	ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ), -- Mid Mall
+  ('Lily Bond', TRUE, 	   	ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ), -- Mid Mall
+  ('Carl Morrison', FALSE,   	ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ), -- Mid Mall
+  ('Nicholas Marshall', TRUE, 	ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ), -- Mid Mall
+  ('Matt Poole', TRUE, 		ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ), -- Mid Mall
+  ('Alison Springer', TRUE,	ST_GeomFromText('POINT(-70.23635670136822 -33.31435300546501)', 4326) ), -- Farellones
+  ('Wendy Duncan', TRUE,    	ST_GeomFromText('POINT(-70.23635670136822 -33.31435300546501)', 4326) ), -- Farellones
+  ('Vanessa Ellison',TRUE,  	ST_GeomFromText('POINT(-69.13056514711766 -23.86049409034115)', 4326) ), -- Desierto de Atacama
+  ('Amy Slater', TRUE, 	   	ST_GeomFromText('POINT(-69.13056514711766 -23.86049409034115)', 4326) ), -- Desierto de Atacama
+  ('Warren Newman', FALSE,  	ST_GeomFromText('POINT(-71.60373754533659 -33.53874252747793)', 4326) ), -- Playa Grande
+  ('Penelope Walsh',TRUE,   	ST_GeomFromText('POINT(-71.60373754533659 -33.53874252747793)', 4326) ), -- Playa Grande
+  ('Lisa Mackenzie', FALSE, 	ST_GeomFromText('POINT(-72.98655183313207 -40.81786111184466)', 4326) ), -- Río Negro
+  ('Rachel Paige',FALSE,    	ST_GeomFromText('POINT(-72.98655183313207 -40.81786111184466)', 4326) ), -- Río Negro
+  ('Thomas White', FALSE, 	ST_GeomFromText('POINT(-72.98655183313207 -40.81786111184466)', 4326) ), -- Río Negro
+  ('Caroline Payne',TRUE,    	ST_GeomFromText('POINT(-72.98655183313207 -40.81786111184466)', 4326) ), -- Río Negro
+  ('Blake Chapman', FALSE,    	ST_GeomFromText('POINT(-72.79456548179628 -43.19338920645537)', 4326) ), -- Pto. Montt
+  ('Elizabeth Hemmings',TRUE,  	ST_GeomFromText('POINT(-72.79456548179628 -43.19338920645537)', 4326) ), -- Pto. Montt
+  ('John MacLeod', TRUE, 	ST_GeomFromText('POINT(-72.98655183313207 -40.81786111184466)', 4326) ), -- Osorno
+  ('Alan Hemmings', FALSE,  	ST_GeomFromText('POINT(-72.98655183313207 -40.81786111184466)', 4326) ), -- Osorno
+  ('Diane Randall',TRUE,   	ST_GeomFromText('POINT(-72.98655183313207 -40.81786111184466)', 4326) ); -- Osorno
+
   
  --Tabla habilidad
  INSERT INTO db_emerg.habilidad (nombre)
@@ -62,18 +73,37 @@ VALUES
   ('Yiyi', 'Connor Ball');
   
 --Tabla emergencia
-INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in)
+INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in, geom)
 VALUES
-  ('Avalancha', 'Reclutando', 'Lorem ipsum dolor sit amet', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Fowler')),
-  ('Ola de calor', 'En proceso', 'Aenean massa. Cum sociis natoque', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Carter')),
-  ('Granizo', 'En proceso', 'Donec quam felis, ultricies nec, pellentesque eu', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Rose')),
-  ('Derrumbe', 'En proceso', 'Nulla consequat massa quis enim', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Moore')),
-  ('Huracan', 'En proceso', 'Donec pede justo, fringilla vel, aliquet nec', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Reeds')),
-  ('Incendio', 'Reclutando', 'Nullam dictum felis eu pede mollis pretium', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Jammer')),
-  ('Terremoto', 'Finalizada', 'Vivamus elementum semper nisi. Aenean vulputate', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Eidres')),
-  ('Tsunami', 'Finalizada', 'Aenean leo ligula, porttitor eu, consequat vitae', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Leams')),
-  ('Erupcion', 'Reclutando', 'Aliquam lorem ante, dapibus in, viverra quis', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Pleto')),
-  ('Tormenta', 'Reclutando', 'Curabitur ullamcorper ultricies nisi.', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Yiyi'));
+  ('Avalancha', 'Reclutando', 'Lorem ipsum dolor sit amet', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Fowler')
+  , ST_GeomFromText('POINT(-70.23635670136822 -33.31435300546501)', 4326) ),
+  
+  ('Ola de calor', 'En proceso', 'Aenean massa. Cum sociis natoque', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Carter')
+  , ST_GeomFromText('POINT(-69.13056514711766 -23.86049409034115)', 4326) ),
+  
+  ('Granizo', 'En proceso', 'Donec quam felis, ultricies nec, pellentesque eu', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Rose')
+  , ST_GeomFromText('POINT(-72.98655183313207 -40.81786111184466)', 4326) ),
+  
+  ('Derrumbe', 'En proceso', 'Nulla consequat massa quis enim', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Moore')
+  , ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ),
+  
+  ('Huracan', 'En proceso', 'Donec pede justo, fringilla vel, aliquet nec', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Reeds')
+  , NULL ),
+  
+  ('Incendio', 'Reclutando', 'Nullam dictum felis eu pede mollis pretium', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Jammer')
+  , ST_GeomFromText('POINT(-70.7520486316111 -34.17534259570546)', 4326) ),
+  
+  ('Terremoto', 'Finalizada', 'Vivamus elementum semper nisi. Aenean vulputate', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Eidres')
+  , ST_GeomFromText('POINT(-71.60373754533659 -33.53874252747793)', 4326) ),
+  
+  ('Tsunami', 'Finalizada', 'Aenean leo ligula, porttitor eu, consequat vitae', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Leams')
+  , ST_GeomFromText('POINT(-71.60373754533659 -33.53874252747793)', 4326) ),
+  
+  ('Erupcion', 'Reclutando', 'Aliquam lorem ante, dapibus in, viverra quis', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Pleto')
+  , ST_GeomFromText('POINT(-72.79456548179628 -43.19338920645537)', 4326) ),
+  
+  ('Tormenta', 'Reclutando', 'Curabitur ullamcorper ultricies nisi.', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Yiyi')
+  , ST_GeomFromText('POINT(-72.95087773125536 -41.458221532662435)', 4326) );
   
 --Tabla tarea
 INSERT INTO db_emerg.tarea (nombre, id_es, id_em)

@@ -71,3 +71,18 @@ create table db_emerg.tarea_habilidad(
 	foreign key(id_ta) references db_emerg.tarea(id) on delete cascade,
 	foreign key(id_ha) references db_emerg.habilidad(id) on delete cascade
 );
+
+--ALTER TABLE db_emerg.voluntario
+--		ADD COLUMN geom
+--			geometry(point);
+			
+SELECT
+AddGeometryColumn('db_emerg', 'voluntario', 'geom','4326','point',2);
+
+			
+--ALTER TABLE db_emerg.emergencia
+--		ADD COLUMN geom
+--
+
+SELECT
+AddGeometryColumn('db_emerg', 'emergencia', 'geom','4326','point',2);
