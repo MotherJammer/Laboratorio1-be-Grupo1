@@ -1,3 +1,5 @@
+CREATE EXTENSION postgis;
+
 create schema db_emerg;
 
 create table db_emerg.voluntario(
