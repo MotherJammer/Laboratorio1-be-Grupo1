@@ -1,5 +1,5 @@
 --Tabla voluntario
-INSERT INTO db_emerg.voluntario (nombre, disponibilidad, geom)
+INSERT INTO db_emerg.voluntario (nombre, disponibilidad, point)
 VALUES
   ('Dorothy Parsons', TRUE,	ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ), -- Mid Mall
   ('Lily Bond', TRUE, 	   	ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ), -- Mid Mall
@@ -73,7 +73,7 @@ VALUES
   ('Yiyi', 'Connor Ball');
   
 --Tabla emergencia
-INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in, geom)
+INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in, point)
 VALUES
   ('Avalancha', 'Reclutando', 'Lorem ipsum dolor sit amet', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Fowler')
   , ST_GeomFromText('POINT(-70.23635670136822 -33.31435300546501)', 4326) ),
@@ -88,7 +88,7 @@ VALUES
   , ST_GeomFromText('POINT(-70.77220812005693 -33.53833574948359)', 4326) ),
   
   ('Huracan', 'En proceso', 'Donec pede justo, fringilla vel, aliquet nec', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Reeds')
-  , NULL ),
+  , ST_GeomFromText('POINT(-70.7520486316111 -34.17534259570546)', 4326) ),
   
   ('Incendio', 'Reclutando', 'Nullam dictum felis eu pede mollis pretium', (SELECT COUNT(*) FROM db_emerg.ranking AS R, db_emerg.tarea AS T, db_emerg.emergencia AS E WHERE R.id_ta = T.id AND T.id_em = E.id), (SELECT id FROM db_emerg.institucion WHERE nombre = 'Jammer')
   , ST_GeomFromText('POINT(-70.7520486316111 -34.17534259570546)', 4326) ),

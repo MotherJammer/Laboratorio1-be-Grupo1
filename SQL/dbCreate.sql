@@ -1,3 +1,4 @@
+-- Comentar la siguiente línea en caso de ya haber implementado la extensión
 CREATE EXTENSION postgis;
 
 create schema db_emerg;
@@ -79,7 +80,7 @@ create table db_emerg.tarea_habilidad(
 --			geometry(point);
 			
 SELECT
-AddGeometryColumn('db_emerg', 'voluntario', 'geom','4326','point',2);
+AddGeometryColumn('db_emerg', 'voluntario', 'point','4326','point',2);
 
 			
 --ALTER TABLE db_emerg.emergencia
@@ -87,4 +88,4 @@ AddGeometryColumn('db_emerg', 'voluntario', 'geom','4326','point',2);
 --
 
 SELECT
-AddGeometryColumn('db_emerg', 'emergencia', 'geom','4326','point',2);
+AddGeometryColumn('db_emerg', 'emergencia', 'point','4326','point',2);
