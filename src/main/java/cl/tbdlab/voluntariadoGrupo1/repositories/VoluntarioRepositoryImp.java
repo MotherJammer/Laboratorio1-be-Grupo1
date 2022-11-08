@@ -16,11 +16,16 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     @Override
     public int createVoluntario(VoluntarioModel voluntario){
         try (Connection connection = sql2o.open()){
-            connection.createQuery("INSERT INTO db_emerg.voluntario (nombre, disponibilidad) VALUES (:nombre, :disponibilidad);")
+
+            String point = "POINT(" + voluntario.getLongitud() + " " + voluntario.getLatitud() + ")";
+
+            connection.createQuery("INSERT INTO db_emerg.voluntario (nombre, disponibilidad, point)" +
+                            " VALUES (:nombre, :disponibilidad, ST_GeomFromText(:point, 4326));")
                     .addParameter("nombre", voluntario.getNombre())
                     .addParameter("disponibilidad", voluntario.getDisponibilidad())
+                    .addParameter("point", point)
                     .executeUpdate();
-            return (1);
+            return (lastRecord());
         }
         catch (Exception err){
             return (-1);
@@ -43,11 +48,17 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     @Override
     public int updateVoluntario(VoluntarioModel voluntario, Long id){
         try (Connection connection = sql2o.open()){
-            connection.createQuery("UPDATE db_emerg.voluntario AS v SET nombre = :nombre, disponibilidad = :disponibilidad WHERE v.id = :id;")
+
+            String point = "POINT(" + voluntario.getLongitud() + " " + voluntario.getLatitud() + ")";
+
+            connection.createQuery("UPDATE db_emerg.voluntario AS v" +
+                            " SET nombre = :nombre, disponibilidad = :disponibilidad, point = ST_GeomFromText(:point, 4326)" +
+                            " WHERE v.id = :id;")
                     .addParameter("nombre", voluntario.getNombre())
                     .addParameter("disponibilidad", voluntario.getDisponibilidad())
+                    .addParameter("point", point)
                     .executeUpdate();
-            return (1);
+            return (id.intValue());
         }
         catch (Exception err){
             return (-1);
@@ -88,6 +99,18 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
         }
         catch (Exception err){
             return (-1);
+        }
+    }
+
+    @Override
+    public int lastRecord(){
+        try (Connection conn = sql2o.open()){
+            return conn.createQuery("SELECT  MAX(id) FROM db_emerg.emergencia")
+                    .executeScalar(Integer.class);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+            return 0;
         }
     }
 }

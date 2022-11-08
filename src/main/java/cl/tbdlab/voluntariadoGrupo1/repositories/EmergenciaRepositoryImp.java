@@ -62,18 +62,22 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public int updateEmergencia(EmergenciaModel emergencia, long id){
+    public int updateEmergencia(EmergenciaModel emergencia, Long id){
         try(Connection conn = sql2o.open()){
+
+            String point = "POINT(" + emergencia.getLongitud() + " " + emergencia.getLatitud() + ")";
+
             conn.createQuery("UPDATE db_emerg.emergencia as e SET nombre = :nombre, estado_eme = :estado," +
-                    "detalles = :detalles, voluntarios_reg = :voluntarios_reg, id_in = :id_in WHERE e.id = :id;")
+                    "detalles = :detalles, voluntarios_reg = :voluntarios_reg, id_in = :id_in, point = ST_GeomFromText(:point, 4326)" +
+                            " WHERE e.id = :id;")
                     .addParameter("nombre", emergencia.getNombre())
                     .addParameter("estado",emergencia.getEstado_eme())
                     .addParameter("detalles", emergencia.getDetalles())
                     .addParameter("voluntarios_reg",emergencia.getVoluntarios_reg())
                     .addParameter("id_in", emergencia.getId_in())
-                    .addParameter("id", id)
+                    .addParameter("point", point)
                     .executeUpdate();
-            return 1;
+            return id.intValue();
         }
         catch(Exception e){
             System.out.println(e.getMessage());

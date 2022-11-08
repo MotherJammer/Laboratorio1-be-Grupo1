@@ -11,4 +11,5 @@ public interface VoluntarioRepository {
     public int deleteVoluntario(Long id);
     public List<VoluntarioModel> readAllVoluntarios();
     public int deleteAllVoluntarios();
+    public int lastRecord();
 }
