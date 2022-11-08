@@ -38,7 +38,7 @@ public class EmeHabilidadRepositoryImp implements EmeHabilidadRepository{
     }
     public int createEmeHabilidad(List<Long> idHabilidades){
         int lastRecord = emergenciaRepository.lastRecord();
-        EmergenciaModel emergency = emergenciaRepository.readEmergencia((long) lastRecord);
+        EmergenciaModel emergency = emergenciaRepository.readEmergencia(lastRecord);
         for (int i=0;i<idHabilidades.size();i++){
             HabilidadModel habilidad = habilidadRepository.readHabilidad(idHabilidades.get(i));
             EmeHabilidadModel emeHabilidad = new EmeHabilidadModel(emergency,habilidad);

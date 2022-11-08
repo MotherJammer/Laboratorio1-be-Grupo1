@@ -14,15 +14,19 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
     @Autowired
     InstitucionRepositoryImp institucionRepository;
     @Override
-    public int insertEmergencia(String nombre, String estado, String detalles, int volunt, Long id_in){
+    public int insertEmergencia(String nombre, String estado, String detalles, int volunt, Long id_in, double longitud, double latitud){
         try(Connection conn = sql2o.open()){
-            conn.createQuery("INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in)" +
-                    "VALUES (:nombre, :estado_eme, :detalles, :voluntarios_reg, :id_in);")
+
+            String geom = "POINT (" + longitud + " " + latitud + ")";
+
+            conn.createQuery("INSERT INTO db_emerg.emergencia (nombre, estado_eme, detalles, voluntarios_reg, id_in, point)" +
+                    "VALUES (:nombre, :estado_eme, :detalles, :voluntarios_reg, :id_in, ST_GeomFromText(:geom, 4326));")
                     .addParameter("nombre", nombre)
                     .addParameter("estado_eme", estado)
                     .addParameter("detalles", detalles)
                     .addParameter("voluntarios_reg", volunt)
                     .addParameter("id_in", id_in)
+                    .addParameter("geom", geom)
                     .executeUpdate()
                     .close();
             return lastRecord();
@@ -35,7 +39,7 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
     @Override
     public List<EmergenciaModel>readEmergencia(){
         try(Connection conn = sql2o.open()){
-            List<EmergenciaModel> emergencia = conn.createQuery("SELECT * FROM db_emerg.emergencia;")
+            List<EmergenciaModel> emergencia = conn.createQuery("SELECT id, nombre, estado_eme, detalles, voluntarios_reg, id_in, ST_X(ST_ASTEXT(point)) AS longitud, ST_Y(ST_ASTEXT(point)) as latitud FROM db_emerg.emergencia;")
                     .executeAndFetch(EmergenciaModel.class);
             return emergencia;
         }
@@ -45,9 +49,9 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public EmergenciaModel readEmergencia(Long id) {
+    public EmergenciaModel readEmergencia(int id) {
         try(Connection conn = sql2o.open()){
-            EmergenciaModel emergencia = conn.createQuery("SELECT * FROM db_emerg.emergencia as e WHERE e.id = :id;")
+            EmergenciaModel emergencia = conn.createQuery("SELECT id, nombre, estado_eme, detalles, voluntarios_reg, id_in, ST_X(ST_ASTEXT(point)) AS longitud, ST_Y(ST_ASTEXT(point)) as latitud FROM db_emerg.emergencia AS e WHERE e.id = :id;")
                     .addParameter("id", id)
                     .executeAndFetchFirst(EmergenciaModel.class);
             return emergencia;

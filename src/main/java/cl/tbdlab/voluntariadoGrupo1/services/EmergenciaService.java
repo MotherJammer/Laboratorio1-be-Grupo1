@@ -18,7 +18,7 @@ public class EmergenciaService {
     }
 
     @GetMapping("/emergencias/{id}")
-    public EmergenciaModel getEmergencia(@PathVariable("id") Long id){
+    public EmergenciaModel getEmergencia(@PathVariable("id") int id){
         return emergenciaRepository.readEmergencia(id);
     }
 
@@ -29,8 +29,8 @@ public class EmergenciaService {
 
 
     @PostMapping("/emergencias")
-    public  int testCreateEmergencia (String nombre, String estado_eme, String detalles, int voluntarios_reg, Long id_in){
-        return emergenciaRepository.insertEmergencia(nombre,estado_eme,detalles,voluntarios_reg, id_in);
+    public int createEmergencia (String nombre, String estado_eme, String detalles, int voluntarios_reg, Long id_in, double longitud, double latitud){
+        return emergenciaRepository.insertEmergencia(nombre,estado_eme,detalles,voluntarios_reg, id_in, longitud, latitud);
     }
 
     @PutMapping("/emergencias/{id}")
