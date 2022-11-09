@@ -118,7 +118,21 @@ VALUES
   ('Comunicacion', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Finalizada'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Huracan')),
   ('Retiro de escombros', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'Sin asignar'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Terremoto')),
   ('Distribucion', (SELECT id FROM db_emerg.estado_tarea WHERE estado_actual = 'En proceso'), (SELECT id FROM db_emerg.emergencia WHERE nombre = 'Granizo'));
-  
+
+--Tabla vol_tarea
+INSERT INTO db_emerg.vol_tarea (id_vo, id_ta)
+VALUES
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Dorothy Parsons'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Inspeccion de area')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Lily Bond'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Direccion')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Alison Springer'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Transporte')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Wendy Duncan'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Direccion')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Wendy Duncan'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Inspeccion de area')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Penelope Walsh'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Direccion')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Vanessa Ellison'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Extincion incendio')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Amy Slater'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Limpieza')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Lisa Mackenzie'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Limpieza')),
+    ((SELECT id FROM db_emerg.voluntario WHERE nombre = 'Amy Slater'), (SELECT id FROM db_emerg.tarea WHERE nombre = 'Direccion'));
+
 --Tabla ranking
 INSERT INTO db_emerg.ranking (id_vo, id_ta)
 VALUES

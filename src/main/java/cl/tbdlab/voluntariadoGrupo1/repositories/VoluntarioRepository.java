@@ -12,4 +12,5 @@ public interface VoluntarioRepository {
     public List<VoluntarioModel> readAllVoluntarios();
     public int deleteAllVoluntarios();
     public int lastRecord();
-}
+    public List<VoluntarioModel> getVoluntariosByEmergencia(int emergenciaId);
+    }

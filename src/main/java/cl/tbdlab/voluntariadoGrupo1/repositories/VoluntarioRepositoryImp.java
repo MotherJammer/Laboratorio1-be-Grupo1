@@ -113,4 +113,19 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
             return 0;
         }
     }
+
+    @Override
+    public List<VoluntarioModel> getVoluntariosByEmergencia(int idEm) {
+        final String query = "SELECT v.id, v.nombre, v.disponibilidad "+
+                "FROM db_emerg.voluntario as v, db_emerg.vol_tarea as vt "+
+                "WHERE vt.id_em = "+idEm+" AND v.id = vt.id_vo "+
+                "GROUP BY v.id, v.nombre, v.disponibilidad;";
+        try (Connection conn = sql2o.open()) {
+            return conn.createQuery(query)
+                    .executeAndFetch(VoluntarioModel.class);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 }
