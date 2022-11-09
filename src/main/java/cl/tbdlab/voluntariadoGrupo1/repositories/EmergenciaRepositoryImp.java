@@ -1,6 +1,7 @@
 package cl.tbdlab.voluntariadoGrupo1.repositories;
 
 import cl.tbdlab.voluntariadoGrupo1.models.EmergenciaModel;
+import cl.tbdlab.voluntariadoGrupo1.models.FinishedEmergencyModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
@@ -119,6 +120,25 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         catch (Exception e){
             System.out.println(e.getMessage());
             return 0;
+        }
+    }
+    public List<FinishedEmergencyModel> getFinishedEmergencies(){
+        try (Connection conn = sql2o.open()){
+            return conn.createQuery
+                    ("SELECT e.id, e.nombre, b.vol_reg, count(*) AS tareas" +
+                            " FROM db_emerg.emergencia e JOIN db_emerg.tarea t ON t.id_em = e.id" +
+                            " JOIN db_emerg.estado_tarea et ON et.id = t.id_es" +
+                            " JOIN (" +
+                                "SELECT e.id AS id_emerg, count(*) AS vol_reg FROM db_emerg.emergencia e" +
+                                " JOIN db_emerg.tarea t ON t.id_em = e.id" +
+                                " JOIN db_emerg.ranking r ON r.id_ta = t.id" +
+                                " JOIN db_emerg.voluntario v ON v.id = r.id_vo" +
+                                " JOIN db_emerg.estado_tarea et ON et.id = t.id_es" +
+                                " WHERE e.estado_eme = 'Finalizada' and et.estado_actual = 'Finalizada'" +
+                                " GROUP BY e.id" +
+                            ") AS b ON b.id_emerg = e.id" +
+                            " WHERE e.estado_eme = 'Finalizada' AND et.estado_actual = 'Finalizada'" +
+                            " GROUP BY e.id, b.vol_reg").executeAndFetch(FinishedEmergencyModel.class);
         }
     }
 }

@@ -1,6 +1,7 @@
 package cl.tbdlab.voluntariadoGrupo1.services;
 
 import cl.tbdlab.voluntariadoGrupo1.models.EmergenciaModel;
+import cl.tbdlab.voluntariadoGrupo1.models.FinishedEmergencyModel;
 import cl.tbdlab.voluntariadoGrupo1.repositories.EmergenciaRepository;
 import cl.tbdlab.voluntariadoGrupo1.repositories.InstitucionRepository;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,8 @@ public class EmergenciaService {
         return emergenciaRepository.readEmergencia();
     }
 
+    @GetMapping("/emergencias/terminadas")
+    public List<FinishedEmergencyModel> getEmergenciasTerminadas(){return emergenciaRepository.getFinishedEmergencies();}
 
     @PostMapping("/emergencias")
     public int createEmergencia (String nombre, String estado_eme, String detalles, int voluntarios_reg, Long id_in, double longitud, double latitud){
@@ -46,5 +49,4 @@ public class EmergenciaService {
     public int deleteEmergency(@PathVariable("id") Long id){
         return emergenciaRepository.deleteEmergencia(id);
     }
-
 }

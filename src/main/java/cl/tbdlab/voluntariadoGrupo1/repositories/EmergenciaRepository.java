@@ -1,5 +1,6 @@
 package cl.tbdlab.voluntariadoGrupo1.repositories;
 import cl.tbdlab.voluntariadoGrupo1.models.EmergenciaModel;
+import cl.tbdlab.voluntariadoGrupo1.models.FinishedEmergencyModel;
 
 import java.util.List;
 
@@ -10,6 +11,6 @@ public interface EmergenciaRepository {
     public int updateEmergencia(EmergenciaModel emergencia, Long id);
     public int deleteEmergencia(Long id);
     public int deleteEmergencia();
-
     public int lastRecord();
+    public List<FinishedEmergencyModel> getFinishedEmergencies();
 }
