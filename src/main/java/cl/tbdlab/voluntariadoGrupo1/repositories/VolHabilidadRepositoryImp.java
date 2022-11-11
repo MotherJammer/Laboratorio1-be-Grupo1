@@ -1,5 +1,6 @@
 package cl.tbdlab.voluntariadoGrupo1.repositories;
 
+import cl.tbdlab.voluntariadoGrupo1.models.HabilidadModel;
 import cl.tbdlab.voluntariadoGrupo1.models.VolHabilidadModel;
 import cl.tbdlab.voluntariadoGrupo1.models.VoluntarioModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,17 +13,39 @@ import java.util.List;
 public class VolHabilidadRepositoryImp implements VolHabilidadRepository{
     @Autowired
     private Sql2o sql2o;
-    public int createVolHabilidad(VolHabilidadModel vol_ha){
+
+    @Autowired
+    VoluntarioRepository voluntarioRepository;
+
+    @Autowired
+    HabilidadRepository habilidadRepository;
+
+    @Override
+    public int createVolHabilidadInDB(VolHabilidadModel volHabilidadModel) {
         try (Connection connection = sql2o.open()){
-            connection.createQuery("INSERT INTO db_emerg.vol_habilidad (id_vo, id_ha) VALUES (:id_vo, :id_ha);")
-                    .addParameter("id_vo", vol_ha.getId_vo())
-                    .addParameter("id_ha", vol_ha.getId_ha())
+            connection.createQuery("INSERT INTO db_emerg.vol_habilidad (id_vo, id_ha)" +
+                    "VALUES (:id_vo, :id_ha);")
+                    .addParameter("id_vo", volHabilidadModel.getVoluntario().getId())
+                    .addParameter("id_ha", volHabilidadModel.getHabilidad().getId())
                     .executeUpdate();
             return (1);
         }
-        catch (Exception err){
+        catch (Exception err) {
             return (-1);
         }
+    }
+    public int createVolHabilidad(List<Long> idHabilidades){
+        List<VoluntarioModel> allVolunteers = voluntarioRepository.readAllVoluntarios();
+        int lengthVolunteer = allVolunteers.size();
+        Long lastIdVolunteerAsLong = allVolunteers.get(lengthVolunteer - 1).getId();
+        int lastIdVolunteer = lastIdVolunteerAsLong.intValue();
+        VoluntarioModel voluntarioModel = voluntarioRepository.readVoluntario(lastIdVolunteer);
+        for (int i = 0; i < idHabilidades.size(); i++) {
+            HabilidadModel habilidadModel = habilidadRepository.readHabilidad(idHabilidades.get(i));
+            VolHabilidadModel volHabilidadModel = new VolHabilidadModel(voluntarioModel, habilidadModel);
+            createVolHabilidadInDB(volHabilidadModel);
+        }
+        return 1;
     }
 
     @Override
@@ -42,8 +65,8 @@ public class VolHabilidadRepositoryImp implements VolHabilidadRepository{
     public int updateVolHabilidad(VolHabilidadModel vol_ha, Long id){
         try (Connection connection = sql2o.open()){
             connection.createQuery("UPDATE db_emerg.vol_habilidad AS v SET id_vo = :id_vo, id_ha = :id_ha WHERE v.id = :id;")
-                    .addParameter("id_ha", vol_ha.getId_ha())
-                    .addParameter("id_vo", vol_ha.getId_vo())
+                    .addParameter("id_ha", vol_ha.getHabilidad())
+                    .addParameter("id_vo", vol_ha.getVoluntario())
                     .addParameter("id", id)
                     .executeUpdate();
             return (1);

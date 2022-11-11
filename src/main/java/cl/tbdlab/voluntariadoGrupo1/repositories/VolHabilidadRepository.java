@@ -5,10 +5,12 @@ import cl.tbdlab.voluntariadoGrupo1.models.VolHabilidadModel;
 import java.util.List;
 
 public interface VolHabilidadRepository {
-    public int createVolHabilidad(VolHabilidadModel vol_ha);
+    public int createVolHabilidad(List<Long> idHabilidades);
     public VolHabilidadModel readVolHabilidad(Long id);
     public int updateVolHabilidad(VolHabilidadModel vol_ha, Long id);
     public int deleteVolHabilidad(Long id);
     public List<VolHabilidadModel> readAllVolHabilidad();
     public int deleteAllVolHabilidad();
+
+    public int createVolHabilidadInDB(VolHabilidadModel volHabilidadModel);
 }

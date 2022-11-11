@@ -17,12 +17,13 @@ public class VoluntarioService {
     }
 
     @PostMapping("/voluntarios")
-    public int createVoluntario(@RequestBody VoluntarioModel voluntario){
-        return voluntarioRepository.createVoluntario(voluntario);
+    public int createVoluntario(String nombre, Boolean disponibilidad, double longitud, double latitud){
+        disponibilidad = true;
+        return voluntarioRepository.createVoluntario(nombre, disponibilidad, longitud, latitud);
     }
 
     @GetMapping("/voluntarios/{id}")
-    public VoluntarioModel getVoluntario(@PathVariable("id") Long id){
+    public VoluntarioModel getVoluntario(@PathVariable("id") int id){
         return voluntarioRepository.readVoluntario(id);
     }
 

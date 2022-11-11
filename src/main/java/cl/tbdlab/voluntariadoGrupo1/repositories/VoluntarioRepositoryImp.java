@@ -14,16 +14,14 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     private Sql2o sql2o;
 
     @Override
-    public int createVoluntario(VoluntarioModel voluntario){
+    public int createVoluntario(String nombre, Boolean disponibilidad, double longitud, double latitud){
         try (Connection connection = sql2o.open()){
-
-            String point = "POINT(" + voluntario.getLongitud() + " " + voluntario.getLatitud() + ")";
-
+            String geom = "POINT (" + longitud + " " + latitud + ")";
             connection.createQuery("INSERT INTO db_emerg.voluntario (nombre, disponibilidad, point)" +
                             " VALUES (:nombre, :disponibilidad, ST_GeomFromText(:point, 4326));")
-                    .addParameter("nombre", voluntario.getNombre())
-                    .addParameter("disponibilidad", voluntario.getDisponibilidad())
-                    .addParameter("point", point)
+                    .addParameter("nombre", nombre)
+                    .addParameter("disponibilidad", disponibilidad)
+                    .addParameter("point", geom)
                     .executeUpdate();
             return (lastRecord());
         }
@@ -33,9 +31,9 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     }
 
     @Override
-    public VoluntarioModel readVoluntario(Long id){
+    public VoluntarioModel readVoluntario(int id){
         try (Connection connection = sql2o.open()){
-            VoluntarioModel voluntario = connection.createQuery("SELECT * FROM db_emerg.voluntario AS v WHERE v.id = :id;")
+            VoluntarioModel voluntario = connection.createQuery("SELECT id, nombre, disponibilidad, ST_X(ST_ASTEXT(point)) AS longitud, ST_Y(ST_ASTEXT(point)) as latitud FROM db_emerg.voluntario AS v WHERE v.id = :id;")
                     .addParameter("id", id)
                     .executeAndFetchFirst(VoluntarioModel.class);
             return voluntario;
@@ -81,7 +79,7 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     @Override
     public List<VoluntarioModel> readAllVoluntarios(){
         try (Connection connection = sql2o.open()){
-            List<VoluntarioModel> voluntarios = connection.createQuery("SELECT * FROM db_emerg.voluntario;")
+            List<VoluntarioModel> voluntarios = connection.createQuery("SELECT id, nombre, disponibilidad, ST_X(ST_ASTEXT(point)) AS longitud, ST_Y(ST_ASTEXT(point)) as latitud FROM db_emerg.voluntario AS v;")
                     .executeAndFetch(VoluntarioModel.class);
             return voluntarios;
         }

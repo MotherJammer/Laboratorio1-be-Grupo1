@@ -1,7 +1,12 @@
 package cl.tbdlab.voluntariadoGrupo1.services;
 
+import cl.tbdlab.voluntariadoGrupo1.models.HabilidadModel;
 import cl.tbdlab.voluntariadoGrupo1.models.VolHabilidadModel;
+import cl.tbdlab.voluntariadoGrupo1.models.VoluntarioModel;
+import cl.tbdlab.voluntariadoGrupo1.repositories.HabilidadRepository;
 import cl.tbdlab.voluntariadoGrupo1.repositories.VolHabilidadRepository;
+import cl.tbdlab.voluntariadoGrupo1.repositories.VoluntarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,12 +15,12 @@ import java.util.List;
 @RestController
 public class VolHabilidadService {
     private final VolHabilidadRepository volHabilidadRepository;
-
     public VolHabilidadService(VolHabilidadRepository volHabilidadRepository) {this.volHabilidadRepository = volHabilidadRepository;}
 
     @PostMapping("/vol_ha")
-    public int createVoluntario(@RequestBody VolHabilidadModel vol_ha){
-        return volHabilidadRepository.createVolHabilidad(vol_ha);
+    public int createVoluntario(@RequestParam List<Long> idHabilidades) throws InterruptedException{
+        Thread.sleep(5000);
+        return volHabilidadRepository.createVolHabilidad(idHabilidades);
     }
 
     @GetMapping("/vol_ha/{id}")
