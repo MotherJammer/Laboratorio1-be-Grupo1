@@ -8,10 +8,8 @@ import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Collector;
 
 @Repository
 public class VoluntarioRepositoryImp implements VoluntarioRepository{
@@ -154,6 +152,37 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
             double r = 6371;
             distanciaTemp = r*c;
             temp.add(new CercanoModel(voluntario.getNombre(), distanciaTemp));
+        }
+
+        int ordenado = 0;
+        double distanciaAux;
+        String nombreAux;
+        while (ordenado == 0) {
+            ordenado = 1;
+            for (int j = 0; j < temp.size(); j++) {
+                if (j+1!=temp.size()){
+                    if (temp.get(j).getDistancia() < temp.get(j + 1).getDistancia()) {
+                        distanciaAux = temp.get(j).getDistancia();
+                        nombreAux = temp.get(j).getNombreVoluntario();
+
+                        temp.get(j).setDistancia(temp.get(j + 1).getDistancia());
+                        temp.get(j).setNombreVoluntario(temp.get(j + 1).getNombreVoluntario());
+
+                        temp.get(j + 1).setDistancia(distanciaAux);
+                        temp.get(j + 1).setNombreVoluntario(nombreAux);
+                        ordenado = 0;
+                    }
+                }
+            }
+        }
+
+        if (cantidad<temp.size()){
+            for (int i=0;i<cantidad;i++){
+                finalVol.add(temp.get(i));
+            }
+        }
+        else {
+            finalVol.addAll(temp);
         }
 
         return finalVol;

@@ -1,5 +1,6 @@
 package cl.tbdlab.voluntariadoGrupo1.services;
 
+import cl.tbdlab.voluntariadoGrupo1.models.CercanoModel;
 import cl.tbdlab.voluntariadoGrupo1.models.EmergenciaModel;
 import cl.tbdlab.voluntariadoGrupo1.models.VoluntarioModel;
 import cl.tbdlab.voluntariadoGrupo1.repositories.EmergenciaRepository;
@@ -58,12 +59,11 @@ public class VoluntarioService {
     }
 
     @PostMapping("/voluntarios/closer")
-    public int getCloserVoluntarios(Long id_eme, Long cantidad){
+    public List<CercanoModel> getCloserVoluntarios(Long id_eme, Long cantidad){
         int id_emergencia= id_eme.intValue();
         int cantidadVoluntarios= cantidad.intValue();
         List<VoluntarioModel> voluntariosCercanos = voluntarioRepository.getVoluntariosByEmergencia(id_emergencia);
         EmergenciaModel emergencia = emergenciaRepository.readEmergenciaId(id_emergencia);
-        voluntarioRepository.distanciasVoluntariosEmergencia(voluntariosCercanos, emergencia, cantidadVoluntarios);
-        return 1;
+        return voluntarioRepository.distanciasVoluntariosEmergencia(voluntariosCercanos, emergencia, cantidadVoluntarios);
     }
 }
