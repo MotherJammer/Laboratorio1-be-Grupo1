@@ -58,7 +58,7 @@ create table db_emerg.vol_tarea(
     id_ta serial not null,
     id_em serial not null,
     foreign key(id_vo) references db_emerg.voluntario(id) on delete cascade,
-    foreign key(id_ta) references db_emerg.tarea(id) on delete cascade
+    foreign key(id_ta) references db_emerg.tarea(id) on delete cascade,
     foreign key(id_em) references db_emerg.emergencia(id) on delete cascade
 );
 

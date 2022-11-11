@@ -1,7 +1,10 @@
 package cl.tbdlab.voluntariadoGrupo1.services;
 
+import cl.tbdlab.voluntariadoGrupo1.models.EmergenciaModel;
 import cl.tbdlab.voluntariadoGrupo1.models.VoluntarioModel;
+import cl.tbdlab.voluntariadoGrupo1.repositories.EmergenciaRepository;
 import cl.tbdlab.voluntariadoGrupo1.repositories.VoluntarioRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,7 +13,12 @@ import java.util.List;
 @RestController
 public class VoluntarioService {
 
+    @Autowired
     private final VoluntarioRepository voluntarioRepository;
+
+    @Autowired
+    EmergenciaRepository emergenciaRepository;
+
 
     VoluntarioService(VoluntarioRepository voluntarioRepository){
         this.voluntarioRepository = voluntarioRepository;
@@ -46,5 +54,15 @@ public class VoluntarioService {
     @DeleteMapping("/voluntarios")
     public int deleteAllVoluntario(){
         return voluntarioRepository.deleteAllVoluntarios();
+    }
+
+    @GetMapping("/voluntarios/closer")
+    public int getCloserVoluntarios(Long id_eme, Long cantidad){
+        int id_emergencia= id_eme.intValue();
+        int cantidadVoluntarios= cantidad.intValue();
+        List<VoluntarioModel> voluntariosCercanos = voluntarioRepository.getVoluntariosByEmergencia(id_emergencia);
+        EmergenciaModel emergencia = emergenciaRepository.readEmergencia(id_emergencia);
+        voluntarioRepository.distanciasVoluntariosEmergencia(voluntariosCercanos, emergencia, cantidadVoluntarios);
+        return 1;
     }
 }
