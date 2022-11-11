@@ -5,7 +5,6 @@ import cl.tbdlab.voluntariadoGrupo1.models.FinishedEmergencyModel;
 import cl.tbdlab.voluntariadoGrupo1.repositories.EmergenciaRepository;
 import cl.tbdlab.voluntariadoGrupo1.repositories.InstitucionRepository;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @CrossOrigin
@@ -20,7 +19,7 @@ public class EmergenciaService {
 
     @GetMapping("/emergencias/{id}")
     public EmergenciaModel getEmergencia(@PathVariable("id") int id){
-        return emergenciaRepository.readEmergencia(id);
+        return emergenciaRepository.readEmergenciaId(id);
     }
 
     @GetMapping("/emergencias")

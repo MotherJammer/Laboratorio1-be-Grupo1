@@ -120,19 +120,13 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
     @Override
     public List<VoluntarioModel> getVoluntariosByEmergencia(int idEm) {
         final String query = "SELECT v.id, v.nombre, v.disponibilidad, ST_X(ST_ASTEXT(v.point)) AS longitud, ST_Y(ST_ASTEXT(v.point)) as latitud"+
-                "FROM db_emerg.voluntario as v, db_emerg.vol_tarea as vt "+
+                " FROM db_emerg.voluntario as v, db_emerg.vol_tarea as vt "+
                 "WHERE vt.id_em = :idEm AND v.id = vt.id_vo "+
                 "GROUP BY v.id, v.nombre, v.disponibilidad;";
         try (Connection conn = sql2o.open()) {
             List<VoluntarioModel> voluntarios = conn.createQuery(query)
                     .addParameter("idEm", idEm)
                     .executeAndFetch(VoluntarioModel.class);
-
-            System.out.println("ENtre printf");
-            for (int i=0;i< voluntarios.size();i++){
-                System.out.println("ENtre printf");
-                System.out.println(voluntarios.get(i));
-            }
             return voluntarios;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -146,16 +140,20 @@ public class VoluntarioRepositoryImp implements VoluntarioRepository{
         List<CercanoModel> temp = new ArrayList<>();
         List<CercanoModel> finalVol = new ArrayList<>();
 
-
         for (VoluntarioModel voluntario : voluntarios) {
             double distanciaTemp = 0;
-            distanciaTemp = Math.hypot(emergencia.getLatitud() - voluntario.getLatitud(), emergencia.getLongitud() - voluntario.getLongitud());
-            temp.add(new CercanoModel(voluntario.getNombre(), distanciaTemp));
-        }
+            double longitude1 = Math.toRadians(emergencia.getLongitud());
+            double longitude2 = Math.toRadians(voluntario.getLongitud());
+            double latitude1 = Math.toRadians(emergencia.getLatitud());
+            double latitude2 = Math.toRadians(voluntario.getLatitud());
 
-        for (int i=0; i< temp.size();i++){
-            System.out.println("Nombre voluntario: " + temp.get(i).getNombreVoluntario());
-            System.out.println("Distancia: " + temp.get(i).getDistancia());
+            double dlon = longitude2 - longitude1;
+            double dlat = latitude2 - latitude1;
+            double a = Math.pow(Math.sin(dlat / 2), 2) + Math.cos(latitude1) * Math.cos(latitude2) * Math.pow(Math.sin(dlon / 2),2);
+            double c = 2 * Math.asin(Math.sqrt(a));
+            double r = 6371;
+            distanciaTemp = r*c;
+            temp.add(new CercanoModel(voluntario.getNombre(), distanciaTemp));
         }
 
         return finalVol;

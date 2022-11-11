@@ -50,7 +50,7 @@ public class EmergenciaRepositoryImp implements EmergenciaRepository {
         }
     }
     @Override
-    public EmergenciaModel readEmergencia(int id) {
+    public EmergenciaModel readEmergenciaId(int id) {
         try(Connection conn = sql2o.open()){
             EmergenciaModel emergencia = conn.createQuery("SELECT id, nombre, estado_eme, detalles, voluntarios_reg, id_in, ST_X(ST_ASTEXT(point)) AS longitud, ST_Y(ST_ASTEXT(point)) as latitud FROM db_emerg.emergencia AS e WHERE e.id = :id;")
                     .addParameter("id", id)
