@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "638501c691e08156e757e1f8"
+  },
+  "nombre": "Liderazgo"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e1f9"
+  },
+  "nombre": "Planificacion"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e1fa"
+  },
+  "nombre": "Gestion de recursos"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e1fb"
+  },
+  "nombre": "Colaborador"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e1fc"
+  },
+  "nombre": "Primeros auxilios"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e1fd"
+  },
+  "nombre": "Fuerza"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e1fe"
+  },
+  "nombre": "Gestion de emergencias"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e1ff"
+  },
+  "nombre": "Maquinaria"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e200"
+  },
+  "nombre": "Busqueda"
+},{
+  "_id": {
+    "$oid": "638501c691e08156e757e201"
+  },
+  "nombre": "Organizacion"
+}]

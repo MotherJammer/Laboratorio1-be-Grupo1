@@ -1,0 +1,675 @@
+[{
+  "_id": {
+    "$oid": "638519570841b85232c3210f"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384fe2b91e08156e757e1e1"
+    },
+    "nombre": "Dorothy Parsons",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.77220812005693,
+        -33.53833574948359
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32102"
+    },
+    "nombre": "Transporte",
+    "estado": "",
+    "emergencia": {
+      "_id": {
+        "$oid": "6385054a91e08156e757e205"
+      },
+      "nombre": "Avalancha",
+      "estado_eme": "Reclutando",
+      "detalles": "Lorem ipsum dolor sit amet",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fb3e0841b85232c320c9"
+        },
+        "nombre": "Fowler",
+        "coordinador": "Heather Rampling"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -70.23635670136822,
+          -33.31435300546501
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f8"
+          },
+          "nombre": "Liderazgo"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f9"
+          },
+          "nombre": "Planificacion"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fb"
+          },
+          "nombre": "Colaborador"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fc"
+          },
+          "nombre": "Primeros auxilios"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32110"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384fe7991e08156e757e1e2"
+    },
+    "nombre": "Lily Bond",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.77220812005693,
+        -33.53833574948359
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32105"
+    },
+    "nombre": "Inspeccion de area",
+    "estado": "Sin asignar",
+    "emergencia": {
+      "_id": {
+        "$oid": "6385054a91e08156e757e205"
+      },
+      "nombre": "Avalancha",
+      "estado_eme": "Reclutando",
+      "detalles": "Lorem ipsum dolor sit amet",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fb3e0841b85232c320c9"
+        },
+        "nombre": "Fowler",
+        "coordinador": "Heather Rampling"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -70.23635670136822,
+          -33.31435300546501
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f8"
+          },
+          "nombre": "Liderazgo"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f9"
+          },
+          "nombre": "Planificacion"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fb"
+          },
+          "nombre": "Colaborador"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fc"
+          },
+          "nombre": "Primeros auxilios"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32111"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384fed591e08156e757e1e6"
+    },
+    "nombre": "Alison Springer",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.23635670136822,
+        -33.31435300546501
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32104"
+    },
+    "nombre": "Comunicacion",
+    "estado": "Finalizada",
+    "emergencia": {
+      "_id": {
+        "$oid": "63850b5c0841b85232c320ea"
+      },
+      "nombre": "Granizo",
+      "estado_eme": "En proceso",
+      "detalles": "Donec quam felis, ultricies nec, pellentesque eu",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fbae0841b85232c320cc"
+        },
+        "nombre": "Rose",
+        "coordinador": "Stewart Newman"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -72.98655183313207,
+          -40.81786111184466
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e201"
+          },
+          "nombre": "Organizacion"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32112"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384fee391e08156e757e1e7"
+    },
+    "nombre": "Wendy Duncan",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.23635670136822,
+        -33.31435300546501
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32105"
+    },
+    "nombre": "Inspeccion de area",
+    "estado": "Sin asignar",
+    "emergencia": {
+      "_id": {
+        "$oid": "6385054a91e08156e757e205"
+      },
+      "nombre": "Avalancha",
+      "estado_eme": "Reclutando",
+      "detalles": "Lorem ipsum dolor sit amet",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fb3e0841b85232c320c9"
+        },
+        "nombre": "Fowler",
+        "coordinador": "Heather Rampling"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -70.23635670136822,
+          -33.31435300546501
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f8"
+          },
+          "nombre": "Liderazgo"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f9"
+          },
+          "nombre": "Planificacion"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fb"
+          },
+          "nombre": "Colaborador"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fc"
+          },
+          "nombre": "Primeros auxilios"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32113"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384fee391e08156e757e1e7"
+    },
+    "nombre": "Wendy Duncan",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.23635670136822,
+        -33.31435300546501
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32102"
+    },
+    "nombre": "Transporte",
+    "estado": "",
+    "emergencia": {
+      "_id": {
+        "$oid": "6385054a91e08156e757e205"
+      },
+      "nombre": "Avalancha",
+      "estado_eme": "Reclutando",
+      "detalles": "Lorem ipsum dolor sit amet",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fb3e0841b85232c320c9"
+        },
+        "nombre": "Fowler",
+        "coordinador": "Heather Rampling"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -70.23635670136822,
+          -33.31435300546501
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f8"
+          },
+          "nombre": "Liderazgo"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f9"
+          },
+          "nombre": "Planificacion"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fb"
+          },
+          "nombre": "Colaborador"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fc"
+          },
+          "nombre": "Primeros auxilios"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32114"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384ff4b91e08156e757e1eb"
+    },
+    "nombre": "Penelope Walsh",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -71.60373754533659,
+        -33.53874252747793
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32105"
+    },
+    "nombre": "Inspeccion de area",
+    "estado": "Sin asignar",
+    "emergencia": {
+      "_id": {
+        "$oid": "6385054a91e08156e757e205"
+      },
+      "nombre": "Avalancha",
+      "estado_eme": "Reclutando",
+      "detalles": "Lorem ipsum dolor sit amet",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fb3e0841b85232c320c9"
+        },
+        "nombre": "Fowler",
+        "coordinador": "Heather Rampling"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -70.23635670136822,
+          -33.31435300546501
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f8"
+          },
+          "nombre": "Liderazgo"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f9"
+          },
+          "nombre": "Planificacion"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fb"
+          },
+          "nombre": "Colaborador"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fc"
+          },
+          "nombre": "Primeros auxilios"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32115"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384ff0791e08156e757e1e8"
+    },
+    "nombre": "Vanessa Ellison",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -69.13056514711766,
+        -23.86049409034115
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32103"
+    },
+    "nombre": "Direccion",
+    "estado": "Finalizada",
+    "emergencia": {
+      "_id": {
+        "$oid": "63850b5c0841b85232c320ef"
+      },
+      "nombre": "Tormenta",
+      "estado_eme": "Reclutando",
+      "detalles": "Curabitur ullamcorper ultricies nisi.",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fc840841b85232c320d4"
+        },
+        "nombre": "Yiyi",
+        "coordinador": "Connor Ball"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -72.95087773125536,
+          -41.458221532662435
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fc"
+          },
+          "nombre": "Primeros auxilios"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fd"
+          },
+          "nombre": "Fuerza"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32116"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384ff1791e08156e757e1e9"
+    },
+    "nombre": "Amy Slater",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -69.13056514711766,
+        -23.86049409034115
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32106"
+    },
+    "nombre": "Extincion incendio",
+    "estado": "En proceso",
+    "emergencia": {
+      "_id": {
+        "$oid": "63850b5c0841b85232c320e7"
+      },
+      "nombre": "Tsunami",
+      "estado_eme": "Finalizada",
+      "detalles": "Aenean leo ligula, porttitor eu, consequat vitae",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fc4c0841b85232c320d1"
+        },
+        "nombre": "Leams",
+        "coordinador": "Blake Turner"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -71.60373754533659,
+          -33.53874252747793
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fa"
+          },
+          "nombre": "Gestion de recursos"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32117"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384ff6d91e08156e757e1ec"
+    },
+    "nombre": "Lisa Mackenzie",
+    "disponibilidad": false,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32106"
+    },
+    "nombre": "Extincion incendio",
+    "estado": "En proceso",
+    "emergencia": {
+      "_id": {
+        "$oid": "63850b5c0841b85232c320e7"
+      },
+      "nombre": "Tsunami",
+      "estado_eme": "Finalizada",
+      "detalles": "Aenean leo ligula, porttitor eu, consequat vitae",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fc4c0841b85232c320d1"
+        },
+        "nombre": "Leams",
+        "coordinador": "Blake Turner"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -71.60373754533659,
+          -33.53874252747793
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fa"
+          },
+          "nombre": "Gestion de recursos"
+        }
+      ]
+    }
+  }
+},{
+  "_id": {
+    "$oid": "638519570841b85232c32118"
+  },
+  "voluntario": {
+    "_id": {
+      "$oid": "6384ff1791e08156e757e1e9"
+    },
+    "nombre": "Amy Slater",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -69.13056514711766,
+        -23.86049409034115
+      ]
+    }
+  },
+  "tarea": {
+    "_id": {
+      "$oid": "6385181e0841b85232c32105"
+    },
+    "nombre": "Inspeccion de area",
+    "estado": "Sin asignar",
+    "emergencia": {
+      "_id": {
+        "$oid": "6385054a91e08156e757e205"
+      },
+      "nombre": "Avalancha",
+      "estado_eme": "Reclutando",
+      "detalles": "Lorem ipsum dolor sit amet",
+      "voluntarios_reg": 0,
+      "institucion": {
+        "_id": {
+          "$oid": "6384fb3e0841b85232c320c9"
+        },
+        "nombre": "Fowler",
+        "coordinador": "Heather Rampling"
+      },
+      "point": {
+        "type": "Point",
+        "coordinates": [
+          -70.23635670136822,
+          -33.31435300546501
+        ]
+      },
+      "habilidad": [
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f8"
+          },
+          "nombre": "Liderazgo"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1f9"
+          },
+          "nombre": "Planificacion"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fb"
+          },
+          "nombre": "Colaborador"
+        },
+        {
+          "_id": {
+            "$oid": "638501c691e08156e757e1fc"
+          },
+          "nombre": "Primeros auxilios"
+        }
+      ]
+    }
+  }
+}]

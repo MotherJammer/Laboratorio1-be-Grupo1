@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "6384fb3e0841b85232c320c9"
+  },
+  "nombre": "Fowler",
+  "coordinador": "Heather Rampling"
+},{
+  "_id": {
+    "$oid": "6384fb760841b85232c320cb"
+  },
+  "nombre": "Carter",
+  "coordinador": "Luke Cameron"
+},{
+  "_id": {
+    "$oid": "6384fbae0841b85232c320cc"
+  },
+  "nombre": "Rose",
+  "coordinador": "Stewart Newman"
+},{
+  "_id": {
+    "$oid": "6384fbcd0841b85232c320cd"
+  },
+  "nombre": "Moore",
+  "coordinador": "Faith Lambert"
+},{
+  "_id": {
+    "$oid": "6384fbe80841b85232c320ce"
+  },
+  "nombre": "Reeds",
+  "coordinador": "Joseph Sutherland"
+},{
+  "_id": {
+    "$oid": "6384fc130841b85232c320cf"
+  },
+  "nombre": "Jammer",
+  "coordinador": "Matt Watson"
+},{
+  "_id": {
+    "$oid": "6384fc2c0841b85232c320d0"
+  },
+  "nombre": "Eidres",
+  "coordinador": "Andrea Vance"
+},{
+  "_id": {
+    "$oid": "6384fc4c0841b85232c320d1"
+  },
+  "nombre": "Leams",
+  "coordinador": "Blake Turner"
+},{
+  "_id": {
+    "$oid": "6384fc6b0841b85232c320d3"
+  },
+  "nombre": "Pleto",
+  "coordinador": "Zoe Oliver"
+},{
+  "_id": {
+    "$oid": "6384fc840841b85232c320d4"
+  },
+  "nombre": "Yiyi",
+  "coordinador": "Connor Ball"
+}]

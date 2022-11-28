@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "6385010191e08156e757e1f5"
+  },
+  "estado_actual": "Sin asignar"
+},{
+  "_id": {
+    "$oid": "6385010191e08156e757e1f6"
+  },
+  "estado_actual": "En proceso"
+},{
+  "_id": {
+    "$oid": "6385010191e08156e757e1f7"
+  },
+  "estado_actual": "Finalizada"
+}]

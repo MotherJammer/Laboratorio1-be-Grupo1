@@ -1,0 +1,392 @@
+[{
+  "_id": {
+    "$oid": "6385181e0841b85232c32102"
+  },
+  "nombre": "Transporte",
+  "estado": "",
+  "emergencia": {
+    "_id": {
+      "$oid": "6385054a91e08156e757e205"
+    },
+    "nombre": "Avalancha",
+    "estado_eme": "Reclutando",
+    "detalles": "Lorem ipsum dolor sit amet",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fb3e0841b85232c320c9"
+      },
+      "nombre": "Fowler",
+      "coordinador": "Heather Rampling"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.23635670136822,
+        -33.31435300546501
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f8"
+        },
+        "nombre": "Liderazgo"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f9"
+        },
+        "nombre": "Planificacion"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fb"
+        },
+        "nombre": "Colaborador"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fc"
+        },
+        "nombre": "Primeros auxilios"
+      }
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c32103"
+  },
+  "nombre": "Direccion",
+  "estado": "Finalizada",
+  "emergencia": {
+    "_id": {
+      "$oid": "63850b5c0841b85232c320ef"
+    },
+    "nombre": "Tormenta",
+    "estado_eme": "Reclutando",
+    "detalles": "Curabitur ullamcorper ultricies nisi.",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fc840841b85232c320d4"
+      },
+      "nombre": "Yiyi",
+      "coordinador": "Connor Ball"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.95087773125536,
+        -41.458221532662435
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fc"
+        },
+        "nombre": "Primeros auxilios"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fd"
+        },
+        "nombre": "Fuerza"
+      }
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c32104"
+  },
+  "nombre": "Comunicacion",
+  "estado": "Finalizada",
+  "emergencia": {
+    "_id": {
+      "$oid": "63850b5c0841b85232c320ea"
+    },
+    "nombre": "Granizo",
+    "estado_eme": "En proceso",
+    "detalles": "Donec quam felis, ultricies nec, pellentesque eu",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fbae0841b85232c320cc"
+      },
+      "nombre": "Rose",
+      "coordinador": "Stewart Newman"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e201"
+        },
+        "nombre": "Organizacion"
+      }
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c32105"
+  },
+  "nombre": "Inspeccion de area",
+  "estado": "Sin asignar",
+  "emergencia": {
+    "_id": {
+      "$oid": "6385054a91e08156e757e205"
+    },
+    "nombre": "Avalancha",
+    "estado_eme": "Reclutando",
+    "detalles": "Lorem ipsum dolor sit amet",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fb3e0841b85232c320c9"
+      },
+      "nombre": "Fowler",
+      "coordinador": "Heather Rampling"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.23635670136822,
+        -33.31435300546501
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f8"
+        },
+        "nombre": "Liderazgo"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f9"
+        },
+        "nombre": "Planificacion"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fb"
+        },
+        "nombre": "Colaborador"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fc"
+        },
+        "nombre": "Primeros auxilios"
+      }
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c32106"
+  },
+  "nombre": "Extincion incendio",
+  "estado": "En proceso",
+  "emergencia": {
+    "_id": {
+      "$oid": "63850b5c0841b85232c320e7"
+    },
+    "nombre": "Tsunami",
+    "estado_eme": "Finalizada",
+    "detalles": "Aenean leo ligula, porttitor eu, consequat vitae",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fc4c0841b85232c320d1"
+      },
+      "nombre": "Leams",
+      "coordinador": "Blake Turner"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -71.60373754533659,
+        -33.53874252747793
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fa"
+        },
+        "nombre": "Gestion de recursos"
+      }
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c32107"
+  },
+  "nombre": "Limpieza",
+  "estado": "Sin asignar",
+  "emergencia": {
+    "_id": {
+      "$oid": "63850b5c0841b85232c320e9"
+    },
+    "nombre": "Ola de calor",
+    "estado_eme": "En proceso",
+    "detalles": "Aenean massa. Cum sociis natoque",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fb760841b85232c320cb"
+      },
+      "nombre": "Carter",
+      "coordinador": "Luke Cameron"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -69.13056514711766,
+        -23.86049409034115
+      ]
+    },
+    "habilidad": []
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c32108"
+  },
+  "nombre": "Rescate",
+  "estado": "En proceso",
+  "emergencia": {
+    "_id": {
+      "$oid": "63850b5c0841b85232c320ec"
+    },
+    "nombre": "Huracan",
+    "estado_eme": "Finalizada",
+    "detalles": "Donec pede justo, fringilla vel, aliquet nec",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fbe80841b85232c320ce"
+      },
+      "nombre": "Reeds",
+      "coordinador": "Joseph Sutherland"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.7520486316111,
+        -34.17534259570546
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fb"
+        },
+        "nombre": "Colaborador"
+      }
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c32109"
+  },
+  "nombre": "Resumen danios",
+  "estado": "En proceso",
+  "emergencia": {
+    "_id": {
+      "$oid": "63850b5c0841b85232c320ed"
+    },
+    "nombre": "Incendio",
+    "estado_eme": "Finalizada",
+    "detalles": "Nullam dictum felis eu pede mollis pretium",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fc130841b85232c320cf"
+      },
+      "nombre": "Jammer",
+      "coordinador": "Matt Watson"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.7520486316111,
+        -34.17534259570546
+      ]
+    },
+    "habilidad": []
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c3210a"
+  },
+  "nombre": "Retiro de escombros",
+  "estado": "Sin asignar",
+  "emergencia": {
+    "_id": {
+      "$oid": "63850b5c0841b85232c320ec"
+    },
+    "nombre": "Huracan",
+    "estado_eme": "Finalizada",
+    "detalles": "Donec pede justo, fringilla vel, aliquet nec",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fbe80841b85232c320ce"
+      },
+      "nombre": "Reeds",
+      "coordinador": "Joseph Sutherland"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.7520486316111,
+        -34.17534259570546
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fb"
+        },
+        "nombre": "Colaborador"
+      }
+    ]
+  }
+},{
+  "_id": {
+    "$oid": "6385181e0841b85232c3210b"
+  },
+  "nombre": "Distribucion",
+  "estado": "En proceso",
+  "emergencia": {
+    "_id": {
+      "$oid": "63850b5c0841b85232c320e8"
+    },
+    "nombre": "Avalancha",
+    "estado_eme": "En proceso",
+    "detalles": "Lorem ipsum dolor sit amet",
+    "voluntarios_reg": 0,
+    "institucion": {
+      "_id": {
+        "$oid": "6384fb3e0841b85232c320c9"
+      },
+      "nombre": "Fowler",
+      "coordinador": "Heather Rampling"
+    },
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.23635670136822,
+        -33.31435300546501
+      ]
+    },
+    "habilidad": []
+  }
+}]
