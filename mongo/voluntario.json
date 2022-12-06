@@ -29,7 +29,8 @@
         "descripcion": "Ejercicio de programar, planificar y asignar recursos",
         "codigo": "CC2"
       }
-    ]
+    ],
+    "comuna": "Zapallar"
   },
   {
     "_id": {
@@ -61,7 +62,8 @@
         "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
         "codigo": "DD3"
       }
-    ]
+    ],
+    "comuna": "Cartagena"
   },
   {
     "_id": {
@@ -93,7 +95,8 @@
         "descripcion": "Capacidad de levantar, tirar, empujar o mover objetos",
         "codigo": "FF5"
       }
-    ]
+    ],
+    "comuna": "Cartagena"
   },
   {
     "_id": {
@@ -125,7 +128,8 @@
         "descripcion": "Dominio en la construccion, mantenimiento, montaje y reparacion de equipos industriales",
         "codigo": "HH7"
       }
-    ]
+    ],
+    "comuna": "Cartagena"
   },
   {
     "_id": {
@@ -157,7 +161,8 @@
         "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
         "codigo": "JJ8"
       }
-    ]
+    ],
+    "comuna": "El Bosque"
   },
   {
     "_id": {
@@ -197,7 +202,8 @@
         "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
         "codigo": "JJ8"
       }
-    ]
+    ],
+    "comuna": "El Bosque"
   },
   {
     "_id": {
@@ -237,7 +243,8 @@
         "descripcion": "Organizacion y administracion de recursos para abordar una emergencia particular",
         "codigo": "GG6"
       }
-    ]
+    ],
+    "comuna": "Maipu"
   },
   {
     "_id": {
@@ -277,7 +284,8 @@
         "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
         "codigo": "DD3"
       }
-    ]
+    ],
+    "comuna": "Maipu"
   },
   {
     "_id": {
@@ -309,7 +317,8 @@
         "descripcion": "Ejercicio de programar, planificar y asignar recursos",
         "codigo": "CC2"
       }
-    ]
+    ],
+    "comuna": "Maipu"
   },
   {
     "_id": {
@@ -341,7 +350,8 @@
         "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
         "codigo": "DD3"
       }
-    ]
+    ],
+    "comuna": "Maipu"
   },
   {
     "_id": {
@@ -373,7 +383,8 @@
         "descripcion": "Organizacion y administracion de recursos para abordar una emergencia particular",
         "codigo": "GG6"
       }
-    ]
+    ],
+    "comuna": "Ovalle"
   },
   {
     "_id": {
@@ -405,7 +416,8 @@
         "descripcion": "Dominio en la construccion, mantenimiento, montaje y reparacion de equipos industriales",
         "codigo": "HH7"
       }
-    ]
+    ],
+    "comuna": "Ovalle"
   },
   {
     "_id": {
@@ -429,7 +441,8 @@
         "descripcion": "Ejercicio de programar, planificar y asignar recursos",
         "codigo": "CC2"
       }
-    ]
+    ],
+    "comuna": "Padre Hurtado"
   },
   {
     "_id": {
@@ -453,7 +466,8 @@
         "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
         "codigo": "JJ8"
       }
-    ]
+    ],
+    "comuna": "Rengo"
   },
   {
     "_id": {
@@ -493,7 +507,8 @@
         "descripcion": "Dominio en la construccion, mantenimiento, montaje y reparacion de equipos industriales",
         "codigo": "HH7"
       }
-    ]
+    ],
+    "comuna": "Tortel"
   },
   {
     "_id": {
@@ -517,7 +532,8 @@
         "descripcion": "Conjunto de acciones que permiten la atencion a una persona accidentada de forma inmediata",
         "codigo": "EE4"
       }
-    ]
+    ],
+    "comuna": "Yumbel"
   },
   {
     "_id": {
@@ -541,7 +557,8 @@
         "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
         "codigo": "DD3"
       }
-    ]
+    ],
+    "comuna": "Zapallar"
   },
   {
     "_id": {
@@ -565,7 +582,8 @@
         "descripcion": "Capacidad para influir, motivar y organizar",
         "codigo": "AA0"
       }
-    ]
+    ],
+    "comuna": "Maipu"
   },
   {
     "_id": {
@@ -597,7 +615,8 @@
         "descripcion": "Ejercicio de programar, planificar y asignar recursos",
         "codigo": "CC2"
       }
-    ]
+    ],
+    "comuna": "Coyhaique"
   },
   {
     "_id": {
@@ -653,6 +672,7 @@
         "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
         "codigo": "JJ8"
       }
-    ]
+    ],
+    "comuna": "Ovalle"
   }
 ]
