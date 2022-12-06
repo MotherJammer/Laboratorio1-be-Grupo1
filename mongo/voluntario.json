@@ -1,261 +1,658 @@
-[{
-  "_id": {
-    "$oid": "6384fe2b91e08156e757e1e1"
+[
+  {
+    "_id": {
+      "$oid": "6384fe2b91e08156e757e1e1"
+    },
+    "nombre": "Dorothy Parsons",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.77220812005693,
+        -33.53833574948359
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f9"
+        },
+        "nombre": "Planificacion",
+        "descripcion": "Establecimiento de medidas/actos para enfrentar una situacion",
+        "codigo": "BB1"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fa"
+        },
+        "nombre": "Gestion de recursos",
+        "descripcion": "Ejercicio de programar, planificar y asignar recursos",
+        "codigo": "CC2"
+      }
+    ]
   },
-  "nombre": "Dorothy Parsons",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -70.77220812005693,
-      -33.53833574948359
+  {
+    "_id": {
+      "$oid": "6384fe7991e08156e757e1e2"
+    },
+    "nombre": "Lily Bond",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.77220812005693,
+        -33.53833574948359
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fa"
+        },
+        "nombre": "Gestion de recursos",
+        "descripcion": "Ejercicio de programar, planificar y asignar recursos",
+        "codigo": "CC2"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fb"
+        },
+        "nombre": "Colaborador",
+        "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
+        "codigo": "DD3"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384fe8e91e08156e757e1e3"
+    },
+    "nombre": "Carl Morrison",
+    "disponibilidad": false,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.77220812005693,
+        -33.53833574948359
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fc"
+        },
+        "nombre": "Primeros auxilios",
+        "descripcion": "Conjunto de acciones que permiten la atencion a una persona accidentada de forma inmediata",
+        "codigo": "EE4"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fd"
+        },
+        "nombre": "Fuerza",
+        "descripcion": "Capacidad de levantar, tirar, empujar o mover objetos",
+        "codigo": "FF5"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384fea291e08156e757e1e4"
+    },
+    "nombre": "Nicholas Marshall",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.77220812005693,
+        -33.53833574948359
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fe"
+        },
+        "nombre": "Gestion de emergencias",
+        "descripcion": "Organizacion y administracion de recursos para abordar una emergencia particular",
+        "codigo": "GG6"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1ff"
+        },
+        "nombre": "Maquinaria",
+        "descripcion": "Dominio en la construccion, mantenimiento, montaje y reparacion de equipos industriales",
+        "codigo": "HH7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384feb591e08156e757e1e5"
+    },
+    "nombre": "Matt Poole",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.77220812005693,
+        -33.53833574948359
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e200"
+        },
+        "nombre": "Busqueda",
+        "descripcion": "Experiencia en la busqueda de alguien/algo",
+        "codigo": "II8"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e201"
+        },
+        "nombre": "Organizacion",
+        "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
+        "codigo": "JJ8"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384fed591e08156e757e1e6"
+    },
+    "nombre": "Alison Springer",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.23635670136822,
+        -33.31435300546501
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1ff"
+        },
+        "nombre": "Maquinaria",
+        "descripcion": "Dominio en la construccion, mantenimiento, montaje y reparacion de equipos industriales",
+        "codigo": "HH7"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e200"
+        },
+        "nombre": "Busqueda",
+        "descripcion": "Experiencia en la busqueda de alguien/algo",
+        "codigo": "II8"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e201"
+        },
+        "nombre": "Organizacion",
+        "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
+        "codigo": "JJ8"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384fee391e08156e757e1e7"
+    },
+    "nombre": "Wendy Duncan",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -70.23635670136822,
+        -33.31435300546501
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fc"
+        },
+        "nombre": "Primeros auxilios",
+        "descripcion": "Conjunto de acciones que permiten la atencion a una persona accidentada de forma inmediata",
+        "codigo": "EE4"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fd"
+        },
+        "nombre": "Fuerza",
+        "descripcion": "Capacidad de levantar, tirar, empujar o mover objetos",
+        "codigo": "FF5"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fe"
+        },
+        "nombre": "Gestion de emergencias",
+        "descripcion": "Organizacion y administracion de recursos para abordar una emergencia particular",
+        "codigo": "GG6"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ff0791e08156e757e1e8"
+    },
+    "nombre": "Vanessa Ellison",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -69.13056514711766,
+        -23.86049409034115
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f9"
+        },
+        "nombre": "Planificacion",
+        "descripcion": "Establecimiento de medidas/actos para enfrentar una situacion",
+        "codigo": "BB1"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fa"
+        },
+        "nombre": "Gestion de recursos",
+        "descripcion": "Ejercicio de programar, planificar y asignar recursos",
+        "codigo": "CC2"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fb"
+        },
+        "nombre": "Colaborador",
+        "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
+        "codigo": "DD3"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ff1791e08156e757e1e9"
+    },
+    "nombre": "Amy Slater",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -69.13056514711766,
+        -23.86049409034115
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f8"
+        },
+        "nombre": "Liderazgo",
+        "descripcion": "Capacidad para influir, motivar y organizar",
+        "codigo": "AA0"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fa"
+        },
+        "nombre": "Gestion de recursos",
+        "descripcion": "Ejercicio de programar, planificar y asignar recursos",
+        "codigo": "CC2"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ff3891e08156e757e1ea"
+    },
+    "nombre": "Warren Newman",
+    "disponibilidad": false,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -71.60373754533659,
+        -33.53874252747793
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f9"
+        },
+        "nombre": "Planificacion",
+        "descripcion": "Establecimiento de medidas/actos para enfrentar una situacion",
+        "codigo": "BB1"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fb"
+        },
+        "nombre": "Colaborador",
+        "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
+        "codigo": "DD3"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ff4b91e08156e757e1eb"
+    },
+    "nombre": "Penelope Walsh",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -71.60373754533659,
+        -33.53874252747793
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fc"
+        },
+        "nombre": "Primeros auxilios",
+        "descripcion": "Conjunto de acciones que permiten la atencion a una persona accidentada de forma inmediata",
+        "codigo": "EE4"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fe"
+        },
+        "nombre": "Gestion de emergencias",
+        "descripcion": "Organizacion y administracion de recursos para abordar una emergencia particular",
+        "codigo": "GG6"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ff6d91e08156e757e1ec"
+    },
+    "nombre": "Lisa Mackenzie",
+    "disponibilidad": false,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f9"
+        },
+        "nombre": "Planificacion",
+        "descripcion": "Establecimiento de medidas/actos para enfrentar una situacion",
+        "codigo": "BB1"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1ff"
+        },
+        "nombre": "Maquinaria",
+        "descripcion": "Dominio en la construccion, mantenimiento, montaje y reparacion de equipos industriales",
+        "codigo": "HH7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ff7891e08156e757e1ed"
+    },
+    "nombre": "Rachel Paige",
+    "disponibilidad": false,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fa"
+        },
+        "nombre": "Gestion de recursos",
+        "descripcion": "Ejercicio de programar, planificar y asignar recursos",
+        "codigo": "CC2"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ff8791e08156e757e1ee"
+    },
+    "nombre": "Thomas White",
+    "disponibilidad": false,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e201"
+        },
+        "nombre": "Organizacion",
+        "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
+        "codigo": "JJ8"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ff9891e08156e757e1ef"
+    },
+    "nombre": "Caroline Payne",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fd"
+        },
+        "nombre": "Fuerza",
+        "descripcion": "Capacidad de levantar, tirar, empujar o mover objetos",
+        "codigo": "FF5"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fe"
+        },
+        "nombre": "Gestion de emergencias",
+        "descripcion": "Organizacion y administracion de recursos para abordar una emergencia particular",
+        "codigo": "GG6"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1ff"
+        },
+        "nombre": "Maquinaria",
+        "descripcion": "Dominio en la construccion, mantenimiento, montaje y reparacion de equipos industriales",
+        "codigo": "HH7"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ffb591e08156e757e1f0"
+    },
+    "nombre": "Blake Chapman",
+    "disponibilidad": false,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.79456548179628,
+        -43.19338920645537
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fc"
+        },
+        "nombre": "Primeros auxilios",
+        "descripcion": "Conjunto de acciones que permiten la atencion a una persona accidentada de forma inmediata",
+        "codigo": "EE4"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384ffc691e08156e757e1f1"
+    },
+    "nombre": "Elizabeth Hemmings",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.79456548179628,
+        -43.19338920645537
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fb"
+        },
+        "nombre": "Colaborador",
+        "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
+        "codigo": "DD3"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6384fff191e08156e757e1f2"
+    },
+    "nombre": "John Macleod",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f8"
+        },
+        "nombre": "Liderazgo",
+        "descripcion": "Capacidad para influir, motivar y organizar",
+        "codigo": "AA0"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6385000891e08156e757e1f3"
+    },
+    "nombre": "Alan Hemmings",
+    "disponibilidad": false,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1f9"
+        },
+        "nombre": "Planificacion",
+        "descripcion": "Establecimiento de medidas/actos para enfrentar una situacion",
+        "codigo": "BB1"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fa"
+        },
+        "nombre": "Gestion de recursos",
+        "descripcion": "Ejercicio de programar, planificar y asignar recursos",
+        "codigo": "CC2"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6385001a91e08156e757e1f4"
+    },
+    "nombre": "Diane Randall",
+    "disponibilidad": true,
+    "point": {
+      "type": "Point",
+      "coordinates": [
+        -72.98655183313207,
+        -40.81786111184466
+      ]
+    },
+    "habilidad": [
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fd"
+        },
+        "nombre": "Fuerza",
+        "descripcion": "Capacidad de levantar, tirar, empujar o mover objetos",
+        "codigo": "FF5"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1fe"
+        },
+        "nombre": "Gestion de emergencias",
+        "descripcion": "Organizacion y administracion de recursos para abordar una emergencia particular",
+        "codigo": "GG6"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e1ff"
+        },
+        "nombre": "Maquinaria",
+        "descripcion": "Dominio en la construccion, mantenimiento, montaje y reparacion de equipos industriales",
+        "codigo": "HH7"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e200"
+        },
+        "nombre": "Busqueda",
+        "descripcion": "Experiencia en la busqueda de alguien/algo",
+        "codigo": "II8"
+      },
+      {
+        "_id": {
+          "$oid": "638501c691e08156e757e201"
+        },
+        "nombre": "Organizacion",
+        "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
+        "codigo": "JJ8"
+      }
     ]
   }
-},{
-  "_id": {
-    "$oid": "6384fe7991e08156e757e1e2"
-  },
-  "nombre": "Lily Bond",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -70.77220812005693,
-      -33.53833574948359
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384fe8e91e08156e757e1e3"
-  },
-  "nombre": "Carl Morrison",
-  "disponibilidad": false,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -70.77220812005693,
-      -33.53833574948359
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384fea291e08156e757e1e4"
-  },
-  "nombre": "Nicholas Marshall",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -70.77220812005693,
-      -33.53833574948359
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384feb591e08156e757e1e5"
-  },
-  "nombre": "Matt Poole",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -70.77220812005693,
-      -33.53833574948359
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384fed591e08156e757e1e6"
-  },
-  "nombre": "Alison Springer",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -70.23635670136822,
-      -33.31435300546501
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384fee391e08156e757e1e7"
-  },
-  "nombre": "Wendy Duncan",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -70.23635670136822,
-      -33.31435300546501
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ff0791e08156e757e1e8"
-  },
-  "nombre": "Vanessa Ellison",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -69.13056514711766,
-      -23.86049409034115
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ff1791e08156e757e1e9"
-  },
-  "nombre": "Amy Slater",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -69.13056514711766,
-      -23.86049409034115
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ff3891e08156e757e1ea"
-  },
-  "nombre": "Warren Newman",
-  "disponibilidad": false,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -71.60373754533659,
-      -33.53874252747793
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ff4b91e08156e757e1eb"
-  },
-  "nombre": "Penelope Walsh",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -71.60373754533659,
-      -33.53874252747793
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ff6d91e08156e757e1ec"
-  },
-  "nombre": "Lisa Mackenzie",
-  "disponibilidad": false,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.98655183313207,
-      -40.81786111184466
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ff7891e08156e757e1ed"
-  },
-  "nombre": "Rachel Paige",
-  "disponibilidad": false,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.98655183313207,
-      -40.81786111184466
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ff8791e08156e757e1ee"
-  },
-  "nombre": "Thomas White",
-  "disponibilidad": false,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.98655183313207,
-      -40.81786111184466
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ff9891e08156e757e1ef"
-  },
-  "nombre": "Caroline Payne",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.98655183313207,
-      -40.81786111184466
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ffb591e08156e757e1f0"
-  },
-  "nombre": "Blake Chapman",
-  "disponibilidad": false,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.79456548179628,
-      -43.19338920645537
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384ffc691e08156e757e1f1"
-  },
-  "nombre": "Elizabeth Hemmings",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.79456548179628,
-      -43.19338920645537
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6384fff191e08156e757e1f2"
-  },
-  "nombre": "John Macleod",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.98655183313207,
-      -40.81786111184466
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6385000891e08156e757e1f3"
-  },
-  "nombre": "Alan Hemmings",
-  "disponibilidad": false,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.98655183313207,
-      -40.81786111184466
-    ]
-  }
-},{
-  "_id": {
-    "$oid": "6385001a91e08156e757e1f4"
-  },
-  "nombre": "Diane Randall",
-  "disponibilidad": true,
-  "point": {
-    "type": "Point",
-    "coordinates": [
-      -72.98655183313207,
-      -40.81786111184466
-    ]
-  }
-}]
+]
