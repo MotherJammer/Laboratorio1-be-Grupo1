@@ -25,25 +25,33 @@
       "_id": {
         "$oid": "638501c691e08156e757e1f8"
       },
-      "nombre": "Liderazgo"
+      "nombre": "Liderazgo",
+      "descripcion": "Capacidad para influir, motivar y organizar",
+      "codigo": "AA0"
     },
     {
       "_id": {
         "$oid": "638501c691e08156e757e1f9"
       },
-      "nombre": "Planificacion"
+      "nombre": "Planificacion",
+      "descripcion": "Establecimiento de medidas/actos para enfrentar una situacion",
+      "codigo": "BB1"
     },
     {
       "_id": {
         "$oid": "638501c691e08156e757e1fb"
       },
-      "nombre": "Colaborador"
+      "nombre": "Colaborador",
+      "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
+      "codigo": "DD3"
     },
     {
       "_id": {
         "$oid": "638501c691e08156e757e1fc"
       },
-      "nombre": "Primeros auxilios"
+      "nombre": "Primeros auxilios",
+      "descripcion": "Conjunto de acciones que permiten la atencion a una persona accidentada de forma inmediata",
+      "codigo": "EE4"
     }
   ]
 },{
@@ -73,7 +81,9 @@
       "_id": {
         "$oid": "638501c691e08156e757e1fa"
       },
-      "nombre": "Gestion de recursos"
+      "nombre": "Gestion de recursos",
+      "descripcion": "Ejercicio de programar, planificar y asignar recursos",
+      "codigo": "CC2"
     }
   ]
 },{
@@ -149,7 +159,9 @@
       "_id": {
         "$oid": "638501c691e08156e757e201"
       },
-      "nombre": "Organizacion"
+      "nombre": "Organizacion",
+      "descripcion": "Coordinar todo tipo de recursos en funcion de su proposito y dadas las circunstancias",
+      "codigo": "JJ8"
     }
   ]
 },{
@@ -179,7 +191,9 @@
       "_id": {
         "$oid": "638501c691e08156e757e1fe"
       },
-      "nombre": "Gestion de emergencias"
+      "nombre": "Gestion de emergencias",
+      "descripcion": "Organizacion y administracion de recursos para abordar una emergencia particular",
+      "codigo": "GG6"
     }
   ]
 },{
@@ -209,7 +223,9 @@
       "_id": {
         "$oid": "638501c691e08156e757e1fb"
       },
-      "nombre": "Colaborador"
+      "nombre": "Colaborador",
+      "descripcion": "Apoyo sin la existencia de una relacion de subordinacion",
+      "codigo": "DD3"
     }
   ]
 },{
@@ -285,13 +301,17 @@
       "_id": {
         "$oid": "638501c691e08156e757e1fc"
       },
-      "nombre": "Primeros auxilios"
+      "nombre": "Primeros auxilios",
+      "descripcion": "Conjunto de acciones que permiten la atencion a una persona accidentada de forma inmediata",
+      "codigo": "EE4"
     },
     {
       "_id": {
         "$oid": "638501c691e08156e757e1fd"
       },
-      "nombre": "Fuerza"
+      "nombre": "Fuerza",
+      "descripcion": "Capacidad de levantar, tirar, empujar o mover objetos",
+      "codigo": "FF5"
     }
   ]
 }]
