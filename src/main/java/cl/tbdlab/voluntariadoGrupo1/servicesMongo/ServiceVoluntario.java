@@ -9,29 +9,20 @@ import java.util.List;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 public class ServiceVoluntario {
+
     private final VoluntarioRepository voluntarioRepository;
 
-    ServiceVoluntario(VoluntarioRepository voluntarioRepository){
-        this.voluntarioRepository = voluntarioRepository;
+    public  ServiceVoluntario(VoluntarioRepository voluntarioRepository){
+        this.voluntarioRepository= voluntarioRepository;
     }
 
-    @RequestMapping(value = "/voluntariosMongo", method = RequestMethod.GET)
-    public List<Voluntario> getAllVoluntario() {
-        return voluntarioRepository.findAll();
+    public void test(){
+        List<Voluntario> a = voluntarioRepository.findAll();
+
+        for (int i=0; i < a.size();i++){
+            System.out.println(a.get(i).getComuna());
+        }
     }
 
-    @RequestMapping(value = "/voluntariosMongo/{id}", method = RequestMethod.PUT)
-    public void updateVoluntario(@RequestBody Voluntario voluntario) {
-        voluntarioRepository.save(voluntario);
-    }
 
-    @RequestMapping(value = "/voluntariosMongo", method = RequestMethod.POST)
-    public Voluntario createVoluntario(@RequestBody Voluntario voluntario) {
-        return voluntarioRepository.save(voluntario);
-    }
-
-    @DeleteMapping(value = "/voluntariosMongo/{id}")
-    public void eliminar(@PathVariable(value = "id") int id) {
-        voluntarioRepository.deleteById(id);;
-    }
 }
