@@ -34,5 +34,7 @@ public class ServiceVoluntario {
         this.voluntarioRepository= voluntarioRepository;
     }
 
-
+    public List<Voluntario> getVoluntariosInRadio(int radio, double x, double y){
+        return voluntarioRepository.getVoluntariosInRadius(radio,x,y);
+    }
 }
